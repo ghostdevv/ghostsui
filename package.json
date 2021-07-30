@@ -1,0 +1,16 @@
+{
+  "name": "ghostui",
+  "version": "1.0.0",
+  "description": "My personalised UI library",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghostdevv/ghostui.git"
+  },
+  "author": "GHOST ghostdevbusiness@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghostdevv/ghostui/issues"
+  },
+  "homepage": "https://github.com/ghostdevv/ghostui#readme"
+}
