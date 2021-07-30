@@ -1,0 +1,22 @@
+:root {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    --text: #eee;
+
+    --background: #1e1e1e;
+    --background-light: #2b2d30;
+
+    --text-blue: #437af1;
+    --text-blue-highlight: #2160ec;
+
+    --button: #2160ec;
+    --button-highlight: #174bbb;
+
+    --green: #67c157;
+    --red: #f26c4b;
+}
