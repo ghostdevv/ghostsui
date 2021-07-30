@@ -1,6 +1,6 @@
 {
-  "name": "ghostui",
-  "version": "1.0.0",
+  "name": "ghostsui",
+  "version": "0.0.0-reserve",
   "description": "My personalised UI library",
   "main": "index.js",
   "repository": {
