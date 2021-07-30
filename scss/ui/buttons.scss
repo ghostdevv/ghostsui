@@ -1,0 +1,58 @@
+@mixin button {
+    --background: var(--button);
+    --highlight: var(--button-highlight);
+
+    padding: 12px 24px !important;
+
+    background-color: var(--background);
+    border: 1px solid var(--background);
+    border-radius: 8px;
+    font-weight: 400;
+
+    display: inline-block;
+
+    color: var(--text);
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: var(--highlight);
+        border-color: var(--highlight);
+        color: var(--text);
+    }
+
+    &:focus {
+        transition: none;
+    }
+}
+
+@mixin small() {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 8px 20px !important;
+}
+
+@mixin red() {
+    --highlight: var(--red);
+}
+
+@mixin green() {
+    --highlight: var(--green);
+}
+
+button,
+.button {
+    @include button;
+
+    &.small {
+        @include small;
+    }
+
+    &.red {
+        @include red;
+    }
+
+    &.green {
+        @include green;
+    }
+}
