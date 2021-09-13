@@ -10,7 +10,7 @@
     padding: 32px;
     border-radius: 16px;
 
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 
     @include flex.column;
 
