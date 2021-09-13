@@ -16,7 +16,7 @@ You can either import or use a cdn:
     ```
 
 # What is in this:
-[Album](https://imgur.com/a/9H3Uo2w)
+[Album](https://imgur.com/a/9H3Uo2w) : [REPL](https://svelte.dev/repl/f913eb2fd8c04a0f81ed929e4d5c858d?version=3.42.5)
 
 -   ### Text
     ![](https://i.imgur.com/5GowlC7.png)
