@@ -1,4 +1,4 @@
-> CURRENTLY IN BETA, please install with `npm i ghostsui @next`
+> CURRENTLY IN BETA, please install with `npm i ghostsui@next`
 
 # GHOSTs UI
 This is my ui "framework" mainly based on semantic HTML, while this project is mostly for my personal sites and projects I do expose some docs below.
