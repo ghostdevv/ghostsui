@@ -14,6 +14,8 @@ $baseGap: 12px;
 @mixin column {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+
     gap: $baseGap;
 
     &.center {
