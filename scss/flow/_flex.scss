@@ -1,0 +1,39 @@
+$gaps: (4, 8, 12, 16, 24, 32);
+$baseGap: 12px;
+
+@each $gap in $gaps {
+    .g#{$gap} {
+        gap: #{$gap}px;
+    }
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: $baseGap;
+
+    &.center {
+        align-items: center;
+    }
+
+    &.vcenter {
+        justify-content: center;
+    }
+}
+
+.row {
+    display: flex;
+    gap: $baseGap;
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.vcenter {
+        align-items: center;
+    }
+}
