@@ -2,7 +2,8 @@
   "name": "ghostsui",
   "version": "0.0.0-reserve",
   "description": "My personalised UI library",
-  "main": "index.js",
+  "sass": "./scss/ghostsui.scss",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ghostdevv/ghostui.git"
@@ -12,8 +13,27 @@
   "bugs": {
     "url": "https://github.com/ghostdevv/ghostui/issues"
   },
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
     "greset": "^1.0.0"
-  }
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "cssnano": "^5.0.8",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "postcss": "^8.3.6",
+    "sass": "^1.39.2"
+  },
+  "files": [
+    "scss",
+    "css",
+    "README.md",
+    "LICENSE"
+  ]
 }
