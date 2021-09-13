@@ -10,14 +10,14 @@ label {
 }
 
 @mixin base {
-    padding: 8px 12px;
+    padding: 12px 16px;
     margin: none;
 
     font-size: 1.2rem;
 
     background-color: var(--background-light);
     border: 2px solid var(--background);
-    border-radius: 6px;
+    border-radius: 12px;
 
     width: 100%;
 
