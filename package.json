@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/ghostdevv/ghostui/issues"
   },
-  "homepage": "https://github.com/ghostdevv/ghostui#readme"
+  "homepage": "https://github.com/ghostdevv/ghostui#readme",
+  "dependencies": {
+    "greset": "^1.0.0"
+  }
 }
