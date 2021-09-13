@@ -1,6 +1,10 @@
-/* Mandatory greset */
+/* Core base styles */
 @import 'node_modules/greset/scss/greset';
+@import './theme.scss';
 
 /* Theme */
-@import 'theme/scrollbar';
-@import 'theme/variables';
+@import './theme/scrollbar';
+
+/* UI */
+@import './ui/anchor';
+@import './ui/buttons';
