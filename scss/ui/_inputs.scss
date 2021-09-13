@@ -1,0 +1,45 @@
+.input-row {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+label {
+    font-size: 1rem;
+}
+
+@mixin base {
+    padding: 8px 12px;
+    margin: none;
+
+    font-size: 1.2rem;
+
+    background-color: var(--background);
+    border: 2px solid var(--background);
+    border-radius: 6px;
+
+    width: 100%;
+
+    color: var(--text);
+
+    &.error {
+        border: 2px solid var(--red);
+    }
+}
+
+textarea {
+    @include base;
+
+    min-width: 100%;
+    max-width: 100%;
+
+    height: 150px;
+    max-height: 250px;
+}
+
+input {
+    &[type='text'] {
+        @include base;
+    }
+}
