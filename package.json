@@ -1,6 +1,6 @@
 {
   "name": "ghostsui",
-  "version": "1.0.0-21",
+  "version": "1.0.0-26",
   "description": "My personalised UI library",
   "main": "css/ghostsui.css",
   "sass": "./scss/ghostsui.scss",
@@ -15,9 +15,7 @@
     "url": "https://github.com/ghostdevv/ghostui/issues"
   },
   "scripts": {
-    "dev": "run-p dev:*",
-    "dev:gulp": "gulp dev",
-    "dev:dev": "cd dev && npm run dev",
+    "dev": "gulp dev",
     "build": "gulp build"
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
@@ -30,7 +28,6 @@
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
     "sass": "^1.39.2"
   },
