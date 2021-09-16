@@ -1,4 +1,4 @@
-<banner class="red">
+<banner>
     <p>Hello World!</p>
 </banner>
 
