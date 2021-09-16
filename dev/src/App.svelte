@@ -31,6 +31,8 @@
 
     <button> Click me! </button>
 
+    <button disabled>Disabled button</button>
+
     <card> Hello World! </card>
 
     <input type="text" placeholder="Type..." />
