@@ -8,8 +8,8 @@
 
     --text: #eee;
 
-    --background: #1e1e1e;
-    --background-light: #2b2d30;
+    --background-primary: #1e1e1e;
+    --background-secondary: #2b2d30;
 
     --text-blue: #437af1;
     --text-blue-highlight: #2160ec;
@@ -23,7 +23,7 @@
 
 head,
 body {
-    background-color: var(--background);
+    background-color: var(--background-primary);
     font-family: var(--font-family);
     color: var(--text);
 }

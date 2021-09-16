@@ -2,8 +2,8 @@
 
 @mixin card {
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
-    background-color: var(--background-light);
-    border: 4px solid var(--background-light);
+    background-color: var(--background-secondary);
+    border: 4px solid var(--background-secondary);
 
     min-width: 250px;
 
