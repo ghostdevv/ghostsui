@@ -49,3 +49,4 @@ You can either import or use a cdn:
 - [x] Switch to role=button instead of a.button
 - [ ] Tables
 - [ ] Highlight colour
+- [ ] Fix placeholder
