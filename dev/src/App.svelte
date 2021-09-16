@@ -19,12 +19,6 @@
         <p>Paragraph</p>
     </div>
 
-    <div class="row">
-        <h4>Hello</h4>
-
-        <h4>World</h4>
-    </div>
-
     <a href="https://ghostdev.xyz"> View awesome website </a>
 
     <a href="https://ghostdev.xyz" role="button"> Anchor styled as button </a>
