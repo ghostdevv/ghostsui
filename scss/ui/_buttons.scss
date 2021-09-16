@@ -1,6 +1,6 @@
 @mixin button {
     --btn-background: var(--primary);
-    --btn-highlight: var(--primary-highlight);
+    --btn-highlight: var(--primary-hover);
 
     padding: 12px 24px !important;
 
