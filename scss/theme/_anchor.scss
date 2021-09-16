@@ -1,4 +1,4 @@
-@mixin anchor() {
+a {
     color: var(--secondary);
 
     transition: color 0.2s ease-in-out;
@@ -18,9 +18,4 @@
 
         outline: none;
     }
-}
-
-a,
-.anchor {
-    @include anchor;
 }
