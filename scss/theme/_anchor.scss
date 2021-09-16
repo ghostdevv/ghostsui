@@ -1,5 +1,5 @@
 a {
-    color: var(--primary);
+    color: var(--secondary);
 
     font-weight: 500;
     transition: color 0.2s ease-in-out;
@@ -13,7 +13,6 @@ a {
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
         background-color: var(--secondary-hover);
-        color: var(--text);
 
         text-decoration: underline;
 
