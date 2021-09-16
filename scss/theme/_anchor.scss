@@ -5,14 +5,14 @@ a {
     transition: color 0.2s ease-in-out;
 
     &:hover {
-        color: var(--primary-hover);
+        color: var(--secondary-hover);
     }
 
     &:focus:not(&[role='button']),
     &:active:not(&[role='button']) {
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-        background-color: var(--secondary-hover);
+        background-color: rgba(var(--secondary-rgb), 0.2);
 
         text-decoration: underline;
 
