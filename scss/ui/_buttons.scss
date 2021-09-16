@@ -18,17 +18,19 @@
 
     text-decoration: none !important;
 
-    &:hover,
-    &:focus,
-    &:not(:disabled):active {
+    &:hover {
         background-color: var(--btn-highlight);
         border-color: var(--btn-highlight);
         color: var(--text);
+
+        --btn-box-shadow: var(--secondary);
     }
 
     &:focus,
     &:active {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--primary);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0),
+            0 0 0 4px var(--btn-box-shadow, var(--primary-hover));
+
         outline: none;
     }
 }
