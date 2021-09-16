@@ -16,7 +16,7 @@
     transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out;
 
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:hover,
     &:not(:disabled):active {
@@ -59,9 +59,4 @@ button,
     &.green {
         @include green;
     }
-}
-
-/* Patch for text decoration on items acting like buttons */
-[role='button'] {
-    text-decoration: none;
 }
