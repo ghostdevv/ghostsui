@@ -1,22 +1,20 @@
 @mixin anchor() {
     color: var(--secondary);
 
-    padding: 4px 2px;
-
     transition: color 0.2s ease-in-out;
 
     &:hover {
         color: var(--secondary-hover);
     }
 
-    &:focus,
-    &:active {
+    &:focus:not(&[role='button']),
+    &:active:not(&[role='button']) {
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--secondary);
-
-        background-color: var(--secondary-hover);
+        background-color: var(--secondary);
         color: var(--text);
+
+        text-decoration: underline;
 
         outline: none;
     }
