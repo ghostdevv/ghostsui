@@ -16,6 +16,8 @@
     transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out;
 
+    text-decoration: none;
+
     &:hover,
     &:not(:disabled):active {
         background-color: var(--btn-highlight);
