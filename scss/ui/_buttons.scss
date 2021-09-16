@@ -1,11 +1,11 @@
 @mixin button {
-    --background: var(--button);
-    --highlight: var(--button-highlight);
+    --btn-background: var(--primary);
+    --btn-highlight: var(--primary-highlight);
 
     padding: 12px 24px !important;
 
-    background-color: var(--background-primary);
-    border: 1px solid var(--background-primary);
+    background-color: var(--btn-background);
+    border: 1px solid var(--btn-background);
     border-radius: 8px;
     font-weight: 400;
 
@@ -18,8 +18,8 @@
 
     &:hover,
     &:active {
-        background-color: var(--highlight);
-        border-color: var(--highlight);
+        background-color: var(--btn-highlight);
+        border-color: var(--btn-highlight);
         color: var(--text);
     }
 
@@ -35,11 +35,11 @@
 }
 
 @mixin red() {
-    --highlight: var(--red);
+    --btn-highlight: var(--red);
 }
 
 @mixin green() {
-    --highlight: var(--green);
+    --btn-highlight: var(--green);
 }
 
 button,

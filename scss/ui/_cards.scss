@@ -2,8 +2,8 @@
 
 @mixin card {
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
-    background-color: var(--background-secondary);
-    border: 4px solid var(--background-secondary);
+    background-color: var(--background-tertiary);
+    border: 4px solid var(--background-tertiary);
 
     min-width: 250px;
 
@@ -19,17 +19,17 @@
     flex-shrink: 1;
 
     &:hover:not(&.no-hover) {
-        border: 4px solid var(--button-highlight);
+        border: 4px solid var(--primary-highlight);
     }
 }
 
 @mixin blue {
-    background-color: var(--button);
-    border: 4px solid var(--button);
+    background-color: var(--secondary);
+    border: 4px solid var(--secondary);
 
     &:hover:not(&.no-hover) {
-        border-color: var(--button-highlight);
-        background-color: var(--button-highlight);
+        border-color: var(--primary-highlight);
+        background-color: var(--primary-highlight);
     }
 }
 

@@ -1,24 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
+$dark-100: #3b3e42;
+$dark-200: #1e1e1e;
+$dark-300: #2b2d30;
+
+$blue-100: #2885d6;
+$blue-200: #437af1;
+$blue-300: #2160ec;
+$blue-400: #174bbb;
+
+$green: #67c157;
+$red: #f26c4b;
+
+$light-100: #eee;
+
 :root {
     font-size: 16px;
     font-weight: 300;
 
     --font-family: 'Quicksand', sans-serif;
 
-    --text: #eee;
+    --text: ${#light-100};
 
-    --background-primary: #1e1e1e;
-    --background-secondary: #2b2d30;
+    --background-primary: #{$dark-300};
+    --background-secondary: #{$dark-200};
+    --background-tertiary: #{$dark-100};
 
-    --text-blue: #437af1;
-    --text-blue-highlight: #2160ec;
+    --primary: #{$blue-300};
+    --primary-hover: #{$blue-400};
 
-    --button: #2160ec;
-    --button-highlight: #174bbb;
+    --secondary: #{$blue-200};
+    --secondary-hover: #{$blue-100};
 
-    --green: #67c157;
-    --red: #f26c4b;
+    --green: #{$green};
+    --red: #{$red};
 }
 
 head,

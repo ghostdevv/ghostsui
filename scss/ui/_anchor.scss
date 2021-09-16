@@ -1,10 +1,10 @@
 @mixin anchor() {
-    color: var(--text-blue);
+    color: var(--secondary);
 
     transition: color 0.2s ease-in-out;
 
     &:hover {
-        color: var(--text-blue-highlight);
+        color: var(--secondary-hover);
     }
 
     &:focus {
