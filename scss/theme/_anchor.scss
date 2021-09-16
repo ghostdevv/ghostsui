@@ -7,8 +7,14 @@
         color: var(--secondary-hover);
     }
 
-    &:focus {
-        transition: none;
+    &:focus,
+    &:active {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--secondary);
+
+        background-color: var(--secondary-hover);
+        color: var(--text);
     }
 }
 
