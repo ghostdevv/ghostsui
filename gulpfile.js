@@ -20,4 +20,4 @@ gulp.task('build', () =>
         .pipe(gulp.dest('./css')),
 );
 
-gulp.task('dev', () => gulp.watch('./scss/**.scss', gulp.series('build')));
+gulp.task('dev', () => gulp.watch('./scss/**/*.scss', gulp.series('build')));
