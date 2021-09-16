@@ -1,0 +1,11 @@
+figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+
+    figcaption {
+        color: rgba(var(--text), 0.8);
+        padding: 4px 0px;
+    }
+}
