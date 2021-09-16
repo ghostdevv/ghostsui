@@ -14,26 +14,38 @@ $red: #f26c4b;
 
 $light-100: #eee;
 
+// prettier-ignore
+$colours: (
+    "text": $light-100,
+
+    "background-primary": $dark-300,
+    "background-secondary": $dark-200,
+    "background-tertiary": $dark-100,
+
+    "primary": $blue-300,
+    "primary-hover": $blue-400,
+
+    "secondary": $blue-200,
+    "secondary-hover": $blue-100,
+
+    "green": $green,
+    "red": $red
+);
+
 :root {
     font-size: 16px;
     font-weight: 300;
 
     --font-family: 'Quicksand', sans-serif;
 
-    --text: #{$light-100};
+    @function toRGB($colour) {
+        @return red($colour) + ', ' + green($colour) + ', ' + blue($colour);
+    }
 
-    --background-primary: #{$dark-300};
-    --background-secondary: #{$dark-200};
-    --background-tertiary: #{$dark-100};
-
-    --primary: #{$blue-300};
-    --primary-hover: #{$blue-400};
-
-    --secondary: #{$blue-200};
-    --secondary-hover: #{$blue-100};
-
-    --green: #{$green};
-    --red: #{$red};
+    @each $variable, $colour in $colours {
+        --#{$variable}: #{$colour};
+        --#{$variable}-rgb: #{toRGB($colour)};
+    }
 }
 
 head,
