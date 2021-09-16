@@ -28,7 +28,7 @@
 
     &:focus,
     &:active {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 8px var(--secondary);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--primary);
         outline: none;
     }
 }
