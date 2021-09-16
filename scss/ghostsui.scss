@@ -4,13 +4,13 @@
 
 /* Theme */
 @import './theme/scrollbar';
+@import './theme/anchor';
 
 /* UI */
 @import './ui/cards';
-@import './ui/anchor';
 @import './ui/inputs';
 @import './ui/buttons';
 @import './ui/banners';
 
-/* Flow */
-@import './flow/flex.scss';
+/* Layout */
+@import './layout/flex.scss';
