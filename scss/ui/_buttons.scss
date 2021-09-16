@@ -18,18 +18,23 @@
 
     text-decoration: none !important;
 
-    &:hover,
-    &:focus,
+    &:hover:not(&:disabled),
+    &:focus:not(&:disabled),
     &:active:not(&:disabled) {
         background-color: var(--btn-highlight);
         border-color: var(--btn-highlight);
         color: var(--text);
     }
 
-    &:focus,
-    &:active {
+    &:focus:not(&:disabled),
+    &:active:not(&:disabled) {
         box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--primary);
         outline: none;
+    }
+
+    &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
     }
 }
 
