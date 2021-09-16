@@ -43,7 +43,7 @@
 }
 
 button,
-.button {
+[role='button'] {
     @include button;
 
     &.small {

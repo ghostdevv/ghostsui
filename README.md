@@ -46,6 +46,6 @@ You can either import or use a cdn:
 - [ ] More inputs (radio, select, number, etc)
 - [ ] Figure
 - [ ] Section (margin bottom (rfs probably))
-- [ ] Switch to role=button instead of a.button
+- [x] Switch to role=button instead of a.button
 - [ ] Tables
 - [ ] Highlight colour
