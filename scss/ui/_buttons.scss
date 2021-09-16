@@ -17,7 +17,7 @@
         background-color 0.2s ease-in-out;
 
     &:hover,
-    &:active {
+    &:not(:disabled):active {
         background-color: var(--btn-highlight);
         border-color: var(--btn-highlight);
         color: var(--text);
