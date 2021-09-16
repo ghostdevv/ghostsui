@@ -10,8 +10,6 @@
     padding: 32px;
     border-radius: 16px;
 
-    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
-
     @include flex.column;
 
     align-self: stretch;
@@ -19,6 +17,7 @@
     flex-shrink: 1;
 
     &:hover:not(&.no-hover) {
+        transition: border-color 0.2s ease-in-out;
         border: 4px solid var(--primary-hover);
     }
 }
