@@ -20,7 +20,7 @@ $light-100: #eee;
 
     --font-family: 'Quicksand', sans-serif;
 
-    --text: ${#light-100};
+    --text: #{$light-100};
 
     --background-primary: #{$dark-300};
     --background-secondary: #{$dark-200};
