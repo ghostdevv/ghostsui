@@ -60,3 +60,8 @@ button,
         @include green;
     }
 }
+
+/* Patch for text decoration on items acting like buttons */
+[role='button'] {
+    text-decoration: none;
+}
