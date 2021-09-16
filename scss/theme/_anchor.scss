@@ -1,17 +1,18 @@
 a {
-    color: var(--secondary);
+    color: var(--primary);
 
+    font-weight: 500;
     transition: color 0.2s ease-in-out;
 
     &:hover {
-        color: var(--secondary-hover);
+        color: var(--primary-hover);
     }
 
     &:focus:not(&[role='button']),
     &:active:not(&[role='button']) {
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-        background-color: var(--secondary);
+        background-color: var(--secondary-hover);
         color: var(--text);
 
         text-decoration: underline;
