@@ -26,6 +26,15 @@ label {
     &.error {
         border: 2px solid var(--red);
     }
+
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--secondary);
+    }
 }
 
 textarea {
