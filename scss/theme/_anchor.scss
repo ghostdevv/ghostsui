@@ -1,6 +1,8 @@
 @mixin anchor() {
     color: var(--secondary);
 
+    padding: 4px 2px;
+
     transition: color 0.2s ease-in-out;
 
     &:hover {
