@@ -1,12 +1,6 @@
 $gaps: (4, 8, 12, 16, 24, 32);
 $baseGap: 12px;
 
-@each $gap in $gaps {
-    .g#{$gap} {
-        gap: #{$gap}px;
-    }
-}
-
 .wrap {
     flex-wrap: wrap;
 }
@@ -54,4 +48,10 @@ $baseGap: 12px;
 
 .row {
     @include row;
+}
+
+@each $gap in $gaps {
+    .g#{$gap} {
+        gap: #{$gap}px;
+    }
 }
