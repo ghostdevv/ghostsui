@@ -19,6 +19,7 @@ $baseGap: 12px;
     gap: $baseGap;
 
     &.center {
+        text-align: center;
         align-items: center;
     }
 
@@ -30,6 +31,8 @@ $baseGap: 12px;
 @mixin row {
     display: flex;
     gap: $baseGap;
+
+    width: 100%;
 
     &.center {
         justify-content: center;
