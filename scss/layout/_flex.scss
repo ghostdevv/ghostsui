@@ -18,11 +18,13 @@ $baseGap: 12px;
 
     gap: $baseGap;
 
-    width: 100%;
-
     &.center {
         text-align: center;
         align-items: center;
+    }
+
+    &.full {
+        width: 100%;
     }
 
     &.vcenter {
