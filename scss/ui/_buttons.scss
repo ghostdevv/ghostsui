@@ -2,7 +2,7 @@
     --btn-background: var(--primary);
     --btn-highlight: var(--primary-hover);
 
-    padding: 12px 24px !important;
+    padding: 12px 24px;
 
     background-color: var(--btn-background);
     border: 1px solid var(--btn-background);
@@ -11,12 +11,12 @@
 
     display: inline-block;
 
-    color: var(--text) !important;
+    color: var(--text);
 
     transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out,
         background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
-    text-decoration: none !important;
+    text-decoration: none;
 
     &:hover:not(&:disabled),
     &:focus:not(&:disabled),
@@ -24,6 +24,8 @@
         background-color: var(--btn-highlight);
         border-color: var(--btn-highlight);
         color: var(--text);
+
+        text-decoration: none;
     }
 
     &:focus:not(&:disabled),
@@ -42,7 +44,7 @@
 @mixin small() {
     font-size: 0.8rem;
     font-weight: 500;
-    padding: 8px 20px !important;
+    padding: 8px 20px;
 }
 
 @mixin red() {
