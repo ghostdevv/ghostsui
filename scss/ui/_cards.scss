@@ -10,6 +10,8 @@
     padding: 32px;
     border-radius: 16px;
 
+    color: var(--text);
+
     @include flex.column;
 
     align-self: stretch;

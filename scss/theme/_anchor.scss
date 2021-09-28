@@ -1,25 +1,22 @@
 a {
-    &:not(&[role='button']) {
-        color: var(--secondary);
+    color: var(--secondary);
 
-        font-weight: 500;
-        transition: color 0.2s ease-in-out;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
 
-        &:hover {
-            color: var(--secondary-hover);
-        }
+    &:hover {
+        color: var(--secondary-hover);
+    }
 
-        &:focus,
-        &:active {
-            transition: background-color 0.2s ease-in-out,
-                color 0.2s ease-in-out;
+    &:focus,
+    &:active {
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-            background-color: rgba(var(--secondary-rgb), 0.2);
+        background-color: rgba(var(--secondary-rgb), 0.2);
 
-            text-decoration: underline;
+        text-decoration: underline;
 
-            outline: none;
-        }
+        outline: none;
     }
 
     &[role='button'] {
