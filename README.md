@@ -41,10 +41,9 @@ You can either import or use a cdn:
 
 
 # To Do
-- [ ] Better outline
-- [ ] Refine variables
+- [x] Better outline
+- [x] Refine variables
 - [ ] More inputs (radio, select, number, etc)
-- [x] Figure
 - [ ] Section (margin bottom (rfs probably))
 - [x] Switch to role=button instead of a.button
 - [ ] Tables
