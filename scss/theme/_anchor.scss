@@ -1,21 +1,28 @@
 a {
-    color: var(--secondary);
+    &:not(&[role='button']) {
+        color: var(--secondary);
 
-    font-weight: 500;
-    transition: color 0.2s ease-in-out;
+        font-weight: 500;
+        transition: color 0.2s ease-in-out;
 
-    &:hover {
-        color: var(--secondary-hover);
+        &:hover {
+            color: var(--secondary-hover);
+        }
+
+        &:focus,
+        &:active {
+            transition: background-color 0.2s ease-in-out,
+                color 0.2s ease-in-out;
+
+            background-color: rgba(var(--secondary-rgb), 0.2);
+
+            text-decoration: underline;
+
+            outline: none;
+        }
     }
 
-    &:focus:not(&[role='button']),
-    &:active:not(&[role='button']) {
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-        background-color: rgba(var(--secondary-rgb), 0.2);
-
-        text-decoration: underline;
-
-        outline: none;
+    &[role='button'] {
+        color: var(--text);
     }
 }
