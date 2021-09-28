@@ -29,5 +29,7 @@
 
     <card> Hello World! </card>
 
+    <mark>Highlighted text</mark>
+
     <input type="text" placeholder="Type..." />
 </div>
