@@ -27,9 +27,10 @@
 
     <button disabled>Disabled button</button>
 
-    <card> Hello World! </card>
-
     <mark>Highlighted text</mark>
 
     <input type="text" placeholder="Type..." />
+
+    <card class="blue"> Blue Card </card>
+    <a class="card" href="#"> Link Card</a>
 </div>
