@@ -1,3 +1,4 @@
+import postcssImport from 'postcss-import';
 import autoprefixer from 'autoprefixer';
 import postcss from 'gulp-postcss';
 import gulpSass from 'gulp-sass';
@@ -10,6 +11,7 @@ const sass = gulpSass(dartSass);
 const plugins = [
     cssnano(),
     autoprefixer({ overrideBrowserslist: ['defaults and last 4 version'] }),
+    postcssImport()
 ];
 
 gulp.task('build', () =>
