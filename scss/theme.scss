@@ -1,3 +1,4 @@
+@use 'node_modules/sass-hex-rgb' as rgb;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 $dark-100: #2f2f2f;
@@ -37,13 +38,9 @@ $colours: (
 
     --font-family: 'Quicksand', sans-serif;
 
-    @function toRGB($colour) {
-        @return red($colour) + ', ' + green($colour) + ', ' + blue($colour);
-    }
-
     @each $variable, $colour in $colours {
         --#{$variable}: #{$colour};
-        --#{$variable}-rgb: #{toRGB($colour)};
+        --#{$variable}-rgb: #{rgb.toValues($colour)};
     }
 }
 

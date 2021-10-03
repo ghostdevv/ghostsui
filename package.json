@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
-    "greset": "^2.0.0-4"
+    "greset": "^2.0.0-4",
+    "sass-hex-rgb": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.4",
