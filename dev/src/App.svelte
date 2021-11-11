@@ -33,4 +33,9 @@
 
     <card class="blue"> Blue Card </card>
     <a class="card" href="#"> Link Card</a>
+
+    <select>
+        <option>Hello</option>
+        <option>World</option>
+    </select>
 </div>
