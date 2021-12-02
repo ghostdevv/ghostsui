@@ -21,10 +21,11 @@ $highlight: var(--primary-hover);
     flex-grow: 1;
     flex-shrink: 1;
 
+    transition: border-color 0.2s ease-in-out;
+
     &:hover:not(&.no-hover),
     &:focus,
-    &:active {
-        transition: border-color 0.2s ease-in-out;
+    &:active:not(&.no-hover) {
         border: 4px solid $highlight;
         background-color: $background;
     }
@@ -37,12 +38,11 @@ $highlight: var(--primary-hover);
     background-color: $background;
     border: 4px solid $background;
 
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
     &:hover:not(&.no-hover),
     &:focus,
     &:active {
-        transition: border-color 0.2s ease-in-out,
-            background-color 0.2s ease-in-out;
-
         border-color: $background;
         background-color: $highlight;
     }
