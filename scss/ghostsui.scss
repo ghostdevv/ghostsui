@@ -8,12 +8,13 @@
 @import './theme/mark';
 
 /* UI */
+@import './ui/hr';
 @import './ui/cards';
 @import './ui/select';
 @import './ui/inputs';
 @import './ui/buttons';
 @import './ui/banners';
-@import './ui/hr';
+@import './ui/blockquote';
 
 /* Layout */
 @import './layout/flex';
