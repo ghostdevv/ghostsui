@@ -46,6 +46,6 @@ textarea {
     max-height: 250px;
 }
 
-input {
+input:not([type='checkbox']) {
     @include base;
 }
