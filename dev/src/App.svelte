@@ -38,4 +38,23 @@
         <option>Hello</option>
         <option>World</option>
     </select>
+
+    <blockquote>I am a blockquote</blockquote>
+
+    <hr />
+
+    <ul>
+        <li>list</li>
+        <li>list</li>
+    </ul>
+
+    <table>
+        <tr>
+            <th> Hello </th>
+        </tr>
+
+        <tr>
+            <td>World</td>
+        </tr>
+    </table>
 </div>
