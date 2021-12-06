@@ -45,7 +45,7 @@ You can either import or use a cdn:
 - [x] Refine variables
 - [ ] More inputs (radio, select, number, etc)
 - [ ] Section (margin bottom (rfs probably))
-- [x] Switch to role=button instead of a.button
-- [ ] Tables
-- [ ] Highlight colour
+- [ ] Switch back to button class as I incorrectly used role="button"
+- [x] Tables
+- [x] Highlight colour
 - [ ] Fix placeholder
