@@ -60,7 +60,7 @@ You can either import or use a cdn:
 -   [x] Refine variables
 -   [ ] More inputs (radio, select, number, etc)
 -   [ ] Section (margin bottom (rfs probably))
--   [ ] Switch back to button class as I incorrectly used role="button"
+-   [x] Switch back to button class as I incorrectly used role="button"
 -   [x] Tables
 -   [x] Highlight colour
 -   [ ] Fix placeholder
