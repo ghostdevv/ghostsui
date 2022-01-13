@@ -1,6 +1,6 @@
 {
   "name": "ghostsui",
-  "version": "1.0.0-42",
+  "version": "1.0.0",
   "description": "My personalised UI library",
   "main": "css/ghostsui.css",
   "sass": "./scss/ghostsui.scss",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
-    "greset": "^2.0.0-5",
+    "greset": "^2.0.0-8",
     "sass-hex-rgb": "^1.0.0"
   },
   "devDependencies": {
