@@ -21,7 +21,7 @@
 
     <a href="https://ghostdev.xyz"> View awesome website </a>
 
-    <a href="https://ghostdev.xyz" role="button"> Anchor styled as button </a>
+    <a href="https://ghostdev.xyz" class="button"> Anchor styled as button </a>
 
     <button> Click me! </button>
 
