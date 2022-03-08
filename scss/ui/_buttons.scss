@@ -5,7 +5,7 @@
     padding: 12px 24px;
 
     background-color: var(--btn-background);
-    border: 1px solid var(--btn-background);
+    border: 2px solid var(--btn-background);
     border-radius: 8px;
     font-weight: 400;
 
@@ -59,6 +59,10 @@ button,
 .button,
 [role='button'] {
     @include button;
+
+    &.secondary {
+        background-color: unset;
+    }
 
     &.small {
         @include small;

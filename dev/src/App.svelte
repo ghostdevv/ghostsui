@@ -25,6 +25,8 @@
 
     <button> Click me! </button>
 
+    <button class="secondary">Secondary button</button>
+
     <button disabled>Disabled button</button>
 
     <mark>Highlighted text</mark>
