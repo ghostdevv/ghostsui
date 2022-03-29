@@ -17,7 +17,7 @@ You can either import or use a cdn:
     ```html
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/ghostsui@next/css/ghostsui.css"
+        href="https://cdn.jsdelivr.net/npm/ghostsui@1/css/ghostsui.css"
     />
     ```
 
