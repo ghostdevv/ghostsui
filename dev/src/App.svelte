@@ -32,6 +32,7 @@
     <mark>Highlighted text</mark>
 
     <input type="text" placeholder="Type..." />
+    <input type="text" placeholder="disabled input" disabled />
 
     <card class="blue"> Blue Card </card>
     <a class="card" href="#"> Link Card</a>
