@@ -1,3 +1,7 @@
 section {
     margin: 32px 0px;
+
+    &:first-of-type {
+        margin-top: 0px;
+    }
 }
