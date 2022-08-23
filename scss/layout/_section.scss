@@ -1,7 +1,7 @@
 section {
     margin: 32px 0px;
 
-    &:first-of-type {
+    &:first-child {
         margin-top: 0px;
     }
 }
