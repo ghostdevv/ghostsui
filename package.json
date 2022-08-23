@@ -1,6 +1,6 @@
 {
   "name": "ghostsui",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "My personalised UI library",
   "main": "css/ghostsui.css",
   "sass": "./scss/ghostsui.scss",
