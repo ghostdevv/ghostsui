@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:gulp": "gulp dev",
-    "dev:web": "cd web && npm run web",
+    "dev:web": "cd web && npm run dev",
     "build": "gulp build",
     "web:build": "npm run build && cd web && npm install && npm run build"
   },
