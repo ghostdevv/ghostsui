@@ -18,7 +18,8 @@
     "dev": "run-p dev:*",
     "dev:gulp": "gulp dev",
     "dev:dev": "cd dev && npm run dev",
-    "build": "gulp build"
+    "build": "gulp build",
+    "dev:build": "cd dev && npm run build"
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
