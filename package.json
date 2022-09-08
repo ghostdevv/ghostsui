@@ -19,7 +19,7 @@
     "dev:gulp": "gulp dev",
     "dev:web": "cd web && npm run web",
     "build": "gulp build",
-    "web:build": "cd web && npm install && npm run build"
+    "web:build": "npm run build && cd web && npm install && npm run build"
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
