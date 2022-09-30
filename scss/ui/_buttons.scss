@@ -30,7 +30,6 @@
 
     &:focus:not(&:disabled),
     &:active:not(&:disabled) {
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 4px var(--primary);
         outline: none;
     }
 
