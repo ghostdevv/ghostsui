@@ -23,19 +23,19 @@
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
-    "greset": "^2.0.0-12",
-    "sass-hex-rgb": "^1.0.0"
+    "greset": "^2.0.0",
+    "sass-hex-rgb": "^1.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.4",
-    "cssnano": "^5.1.5",
+    "autoprefixer": "^10.4.12",
+    "cssnano": "^5.1.13",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.12",
-    "postcss-import": "^14.1.0",
-    "sass": "^1.49.9"
+    "postcss": "^8.4.16",
+    "postcss-import": "^15.0.0",
+    "sass": "^1.55.0"
   },
   "files": [
     "scss",
