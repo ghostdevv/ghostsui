@@ -54,6 +54,11 @@ input[type='checkbox'] {
     margin: 0px 4px 0px 0px;
 }
 
+input[type='color'] {
+    padding: 8px;
+    height: 48px;
+}
+
 input,
 textarea {
     &:disabled {

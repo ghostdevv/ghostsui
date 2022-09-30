@@ -1,6 +1,6 @@
 {
   "name": "ghostsui",
-  "version": "1.4.6",
+  "version": "1.4.8",
   "description": "My personalised UI library",
   "main": "css/ghostsui.css",
   "sass": "./scss/ghostsui.scss",
@@ -17,8 +17,9 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:gulp": "gulp dev",
-    "dev:dev": "cd dev && npm run dev",
-    "build": "gulp build"
+    "dev:web": "cd web && npm run dev",
+    "build": "gulp build",
+    "web:build": "npm run build && cd web && npm install && npm run build"
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "dependencies": {
