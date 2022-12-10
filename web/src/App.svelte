@@ -8,6 +8,18 @@
 
 <a class="card" href="/"> Link Card</a>
 
+<input type="checkbox" />
+<input type="checkbox" class="switch" />
+
+<input disabled type="checkbox" />
+<input disabled type="checkbox" class="switch" />
+
+<input disabled checked type="checkbox" />
+<input disabled checked type="checkbox" class="switch" />
+
+<input name="test" type="radio" />
+<input name="test" type="radio" />
+
 <hr />
 
 <header>
