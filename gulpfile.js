@@ -9,17 +9,17 @@ import gulp from 'gulp';
 const sass = gulpSass(dartSass);
 
 const plugins = [
-    cssnano(),
-    autoprefixer({ overrideBrowserslist: ['defaults and last 4 version'] }),
-    postcssImport()
+	cssnano(),
+	autoprefixer({ overrideBrowserslist: ['defaults and last 4 version'] }),
+	postcssImport(),
 ];
 
 gulp.task('build', () =>
-    gulp
-        .src('./scss/ghostsui.scss')
-        .pipe(sass())
-        .pipe(postcss(plugins))
-        .pipe(gulp.dest('./css')),
+	gulp
+		.src('./scss/ghostsui.scss')
+		.pipe(sass())
+		.pipe(postcss(plugins))
+		.pipe(gulp.dest('./css')),
 );
 
 gulp.task('dev', () => gulp.watch('./scss/**/*.scss', gulp.series('build')));

@@ -34,19 +34,19 @@ $colours: (
 );
 
 :root {
-    font-size: 16px;
+	font-size: 16px;
 
-    --font-family: 'Quicksand', sans-serif;
+	--font-family: 'Quicksand', sans-serif;
 
-    @each $variable, $colour in $colours {
-        --#{$variable}: #{$colour};
-        --#{$variable}-rgb: #{rgb.toValues($colour)};
-    }
+	@each $variable, $colour in $colours {
+		--#{$variable}: #{$colour};
+		--#{$variable}-rgb: #{rgb.toValues($colour)};
+	}
 }
 
 head,
 body {
-    background-color: var(--background-primary);
-    font-family: var(--font-family);
-    color: var(--text);
+	background-color: var(--background-primary);
+	font-family: var(--font-family);
+	color: var(--text);
 }
