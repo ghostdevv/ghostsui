@@ -9,10 +9,8 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.8",
+    "ghostsui": "workspace:^",
     "svelte": "^3.50.1",
     "vite": "^3.1.4"
-  },
-  "workspaces": [
-    ".."
-  ]
+  }
 }
