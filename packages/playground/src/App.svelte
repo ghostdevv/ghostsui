@@ -252,6 +252,11 @@
 P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
 p q r s t u v w x y z | ~ </pre>
+
+                <h2>Code</h2>
+                <pre><code
+                        >console.log('Hello World              asdddddddddddddddddddddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssss')</code
+                    ></pre>
             </div>
             <footer><p><a href="#top">[Top]</a></p></footer>
         </article>
