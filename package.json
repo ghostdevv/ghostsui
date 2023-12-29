@@ -4,5 +4,9 @@
     "scripts": {
         "dev": "pnpm --parallel -r dev",
         "build": "pnpm -r build"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.27.1",
+        "@svitejs/changesets-changelog-github-compact": "^1.1.0"
     }
 }

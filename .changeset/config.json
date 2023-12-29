@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "changelog": [
+      "@svitejs/changesets-changelog-github-compact",
+      { "repo": "ghostdevv/ghostsui" }
+  ],
+  "commit": false,
+  "linked": [],
+  "access": "public",
+  "ignore": ["playground"],
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch"
+}
