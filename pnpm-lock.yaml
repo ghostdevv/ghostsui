@@ -26,6 +26,9 @@ importers:
       greset:
         specifier: ^2.0.0
         version: 2.0.0
+      include-media:
+        specifier: ^2.0.0
+        version: 2.0.0
       publint:
         specifier: ^0.2.7
         version: 0.2.7
@@ -1553,6 +1556,10 @@ packages:
 
   /immutable@4.3.4:
     resolution: {integrity: sha512-fsXeu4J4i6WNWSikpI88v/PcVflZz+6kMhUfIwc5SY+poQRPnaf5V7qds6SUyUN3cVxEzuCab7QIoLOQ+DQ1wA==}
+    dev: true
+
+  /include-media@2.0.0:
+    resolution: {integrity: sha512-LSJcffPYIZ/Kln0rIi5UhqQbZxElDCMYA4dPC5MI1rkwwjptgEiOicHnzB0MMhMNJver0+4zULb4MKlgDyapZg==}
     dev: true
 
   /indent-string@4.0.0:
