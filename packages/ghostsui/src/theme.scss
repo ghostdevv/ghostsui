@@ -33,7 +33,8 @@ $colours: (
     "red": $red
 );
 
-:root {
+:root,
+::backdrop {
 	font-size: 16px;
 
 	--font-family: 'Quicksand', sans-serif;
