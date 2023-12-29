@@ -16,9 +16,13 @@
     <button on:click={() => m_dialog.close()}> close </button>
 </dialog>
 
-<banner>
-    <p>Hello World!</p>
-</banner>
+<div role="banner">
+    <p>I have <code>role="banner"</code></p>
+</div>
+
+<div class="banner green">
+    <p>I have <code>class="banner green"</code></p>
+</div>
 
 <a href="https://ghostdev.xyz"> View awesome website </a>
 
