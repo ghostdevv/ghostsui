@@ -7,6 +7,18 @@ form {
 
 label {
 	font-size: 1rem;
+	margin: 8px 0px;
+
+	/** Add a slight margin when using a input in a label */
+	&:has(input),
+	&:has(textarea) {
+		display: block;
+		text-align: left;
+
+		> :not([hidden]) {
+			margin-top: 8px;
+		}
+	}
 }
 
 @mixin base {
