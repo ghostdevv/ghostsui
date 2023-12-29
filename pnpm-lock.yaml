@@ -6,7 +6,9 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  packages/ghostsui:
     devDependencies:
       autoprefixer:
         specifier: ^10.4.12
@@ -27,20 +29,20 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
 
-  web:
+  packages/playground:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^1.0.8
         version: 1.4.0(svelte@3.59.2)(vite@3.2.7)
       ghostsui:
         specifier: workspace:^
-        version: link:..
+        version: link:../ghostsui
       svelte:
         specifier: ^3.50.1
         version: 3.59.2
       vite:
         specifier: ^3.1.4
-        version: 3.2.7(sass@1.69.6)
+        version: 3.2.7
 
 packages:
 
@@ -282,7 +284,7 @@ packages:
       magic-string: 0.26.7
       svelte: 3.59.2
       svelte-hmr: 0.15.3(svelte@3.59.2)
-      vite: 3.2.7(sass@1.69.6)
+      vite: 3.2.7
       vitefu: 0.2.5(vite@3.2.7)
     transitivePeerDependencies:
       - supports-color
@@ -953,7 +955,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite@3.2.7(sass@1.69.6):
+  /vite@3.2.7:
     resolution: {integrity: sha512-29pdXjk49xAP0QBr0xXqu2s5jiQIXNvE/xwd0vUizYT2Hzqe4BksNNoWllFVXJf4eLZ+UlVQmXfB4lWrc+t18g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -982,7 +984,6 @@ packages:
       postcss: 8.4.32
       resolve: 1.22.8
       rollup: 2.79.1
-      sass: 1.69.6
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
@@ -995,7 +996,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 3.2.7(sass@1.69.6)
+      vite: 3.2.7
     dev: true
 
   /wrappy@1.0.2:

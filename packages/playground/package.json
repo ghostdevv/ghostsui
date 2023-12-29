@@ -1,11 +1,10 @@
 {
-  "name": "dev",
+  "name": "playground",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "build": "vite build"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.8",
