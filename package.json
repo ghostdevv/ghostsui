@@ -2,7 +2,7 @@
     "name": "ghostsui-monorepo",
     "private": true,
     "scripts": {
-        "dev": "pnpm -r dev",
+        "dev": "pnpm --parallel -r dev",
         "build": "pnpm -r build"
     }
 }

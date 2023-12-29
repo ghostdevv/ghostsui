@@ -14,6 +14,7 @@
     "url": "https://github.com/ghostdevv/ghostui/issues"
   },
   "scripts": {
+    "dev": "pnpm sass src/ghostsui.scss ghostsui.css --watch --no-source-map",
     "build": "pnpm sass src/ghostsui.scss | pnpm esbuild --loader=css --bundle --minify --outfile=ghostsui.css && publint"
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
