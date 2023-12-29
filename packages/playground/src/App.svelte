@@ -1,3 +1,21 @@
+<script lang="ts">
+    let m_dialog: HTMLDialogElement;
+    let nm_dialog: HTMLDialogElement;
+</script>
+
+<button on:click={() => m_dialog.showModal()}> open modal dialog </button>
+<button on:click={() => nm_dialog.show()}> open non-modal dialog </button>
+
+<dialog bind:this={nm_dialog}>
+    non-modal dialog
+    <button on:click={() => nm_dialog.close()}> close </button>
+</dialog>
+
+<dialog bind:this={m_dialog}>
+    modal dialog
+    <button on:click={() => m_dialog.close()}> close </button>
+</dialog>
+
 <banner>
     <p>Hello World!</p>
 </banner>
