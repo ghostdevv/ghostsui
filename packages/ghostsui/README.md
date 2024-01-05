@@ -6,19 +6,35 @@ This is my ui "framework" mainly based on semantic HTML, while this project is m
 
 # Use
 
-You can either import or use a cdn:
+You can use by importing it or via a cdn:
 
--   Importing
+-   CDN (easiest method)
 
-    -   `ghostsui/scss/ghostsui.scss`
-    -   `ghostsui/css/ghostsui.css`
-
--   CDN
     ```html
     <link
-    	rel="stylesheet"
-    	href="https://cdn.jsdelivr.net/npm/ghostsui@1/css/ghostsui.css"
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/ghostsui@2/ghostsui.css"
     />
+    ```
+
+-   When using bundlers such as vite or rollup
+
+    ```bash
+    npm install ghostsui -D
+    ```
+
+    ```js
+    import 'ghostsui';
+    ```
+
+-   CSS Import
+    
+    ```bash
+    npm install ghostsui
+    ```
+
+    ```css
+    @import 'node_modules/ghostsui/ghostsui.css';
     ```
 
 # What is in this:
@@ -53,14 +69,3 @@ You can either import or use a cdn:
     ![](https://i.imgur.com/h5pF3Lz.png)
 
 ...more, I got bored of taking screen shots
-
-# To Do
-
--   [x] Better outline
--   [x] Refine variables
--   [ ] More inputs (radio, select, number, etc)
--   [x] Section (margin bottom (rfs probably))
--   [x] Switch back to button class as I incorrectly used role="button"
--   [x] Tables
--   [x] Highlight colour
--   [ ] Fix placeholder
