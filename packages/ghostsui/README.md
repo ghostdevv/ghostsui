@@ -1,8 +1,6 @@
 # GHOSTs UI
 
-This is my ui "framework" mainly based on semantic HTML, while this project is mostly for my personal sites and projects I do expose some docs below.
-
-> NOTE: since it's my personal ui lib it might change often and won't be strictly documented - might make a public dirivitive in the future
+My personal styles I use across my projects. It's not intended for public use but feel free to, I attempt to follow semver as best as possible! It includes [`greset`](https://github.com/ghostdevv/greset), semantically applied styles, and a handful of utility classes.
 
 # Use
 
@@ -37,35 +35,6 @@ You can use by importing it or via a cdn:
     @import 'node_modules/ghostsui/ghostsui.css';
     ```
 
-# What is in this:
+# Colours
 
-[Album](https://imgur.com/a/9H3Uo2w) : [REPL](https://svelte.dev/repl/f913eb2fd8c04a0f81ed929e4d5c858d?version=3.42.5)
-
--   ### Text
-
-    ![](https://i.imgur.com/5GowlC7.png)
-
--   ### Flex
-
-    ![](https://i.imgur.com/8iXMH14.png)
-
--   ### Anchors
-
-    ![](https://i.imgur.com/zsjP7Cg.png)
-
--   ### Banners
-
-    ![](https://i.imgur.com/GcywaCQ.png)
-
--   ### Buttons
-
-    ![](https://i.imgur.com/02VXllP.png)
-
--   ### Cards
-
-    ![](https://i.imgur.com/92Ry2Cu.png)
-
--   ### Input
-    ![](https://i.imgur.com/h5pF3Lz.png)
-
-...more, I got bored of taking screen shots
+SEE: https://ghostdevv.xyz/branding
