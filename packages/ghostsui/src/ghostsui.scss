@@ -1,6 +1,26 @@
+/* Theme Imports */
+@use './theme.scss';
+@use 'sass-hex-rgb/index.scss' as rgb;
+
 /* Core base styles */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import 'greset/greset.css';
-@import './theme.scss';
+
+/* Apply theme */
+:root,
+::backdrop {
+	font-size: 16px;
+	--font-family: 'Quicksand', sans-serif;
+
+	@include theme.vars();
+}
+
+head,
+body {
+	background-color: var(--background-primary);
+	font-family: var(--font-family);
+	color: var(--text);
+}
 
 /* Theme */
 @import './theme/scrollbar';

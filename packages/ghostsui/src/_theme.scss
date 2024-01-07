@@ -1,5 +1,5 @@
 @use 'sass-hex-rgb/index.scss' as rgb;
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@use 'sass:map';
 
 $dark-100: #29292a;
 $dark-200: #212123;
@@ -33,21 +33,19 @@ $colours: (
     "red": $red
 );
 
-:root,
-::backdrop {
-	font-size: 16px;
+/* Utility function to return a colour by name */
+@function colour($colour) {
+	@return map.get($colours, $colour);
+}
 
-	--font-family: 'Quicksand', sans-serif;
+/* Utility function to return a colour by name as rgb values */
+@function colourRGB($colour) {
+	@return rgb.toValues(map.get($colours, $colour));
+}
 
+@mixin vars() {
 	@each $variable, $colour in $colours {
 		--#{$variable}: #{$colour};
 		--#{$variable}-rgb: #{rgb.toValues($colour)};
 	}
-}
-
-head,
-body {
-	background-color: var(--background-primary);
-	font-family: var(--font-family);
-	color: var(--text);
 }
