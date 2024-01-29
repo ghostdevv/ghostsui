@@ -22,8 +22,8 @@
 	--label-text-color: #{t.colour('text')};
 
 	--text: #{t.colour('text')};
-	--text-hover: rgba(#{t.colourRGB('text')}, 0.6);
-	--text-muted: rgba(#{t.colourRGB('text')}, 0.8);
+	--text-hover: #{t.colour('text-grey')};
+	--text-muted: #{t.colour('text-grey')};
 
 	--arr-queue-color: #{t.colour('green')};
 

@@ -1,36 +1,24 @@
 @use 'sass-hex-rgb/index.scss' as rgb;
 @use 'sass:map';
 
-$dark-100: #29292a;
-$dark-200: #212123;
-$dark-300: #121214;
-
-$blue-100: #5689f7;
-$blue-200: #437af1;
-$blue-300: #2160ec;
-$blue-400: #174bbb;
-
-$green: #67c157;
-$red: #f26c4b;
-
-$light-100: #eee;
-
 // prettier-ignore
 $colours: (
-    "text": $light-100,
+    "text": #eeeeee,
+    "text-grey": #969697,
 
-    "background-primary": $dark-300,
-    "background-secondary": $dark-200,
-    "background-tertiary": $dark-100,
+    "background-primary": #121214,
+    "background-secondary": #212123,
+    "background-tertiary": #29292a,
 
-    "primary": $blue-300,
-    "primary-hover": $blue-400,
+    "primary": #2160ec,
+    "primary-hover": #174bbb,
 
-    "secondary": $blue-200,
-    "secondary-hover": $blue-100,
+    "secondary": #437af1,
+    "secondary-hover": #5689f7,
 
-    "green": $green,
-    "red": $red
+    "orange": #f29b4b,
+    "green": #67c157,
+    "red": #f26c4b,
 );
 
 /* Utility function to return a colour by name */
