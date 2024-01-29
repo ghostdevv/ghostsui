@@ -42,6 +42,23 @@
 <input name="test" type="radio" />
 <input name="test" type="radio" />
 
+<h3>buttons</h3>
+
+<button>Regular</button>
+<button class="outline">Outline</button>
+
+<button class="red">Red</button>
+<button class="outline red">Red outline</button>
+
+<button class="green">Green</button>
+<button class="green outline">Green outline</button>
+
+<button class="orange">Orange</button>
+<button class="orange outline">Orange outline</button>
+
+<button disabled>Disabled</button>
+<button disabled class="outline">Disabled outline</button>
+
 <hr />
 
 <header>

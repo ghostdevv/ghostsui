@@ -1,77 +1,54 @@
-@mixin button {
-	--btn-background: var(--primary);
-	--btn-highlight: var(--primary-hover);
-
-	padding: 12px 24px;
-
-	background-color: var(--btn-background);
-	border: 2px solid var(--btn-background);
+button,
+.button,
+[role='button'] {
+	background-color: var(--primary);
+	border: 2px solid var(--primary);
+	color: var(--text);
 	border-radius: 8px;
 	font-weight: 400;
 
+	padding: 12px 24px;
 	display: inline-block;
+	margin: 4px;
 
-	color: var(--text);
-
-	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out,
-		background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 
 	text-decoration: none;
 
-	&:hover:not(&:disabled),
-	&:focus:not(&:disabled),
-	&:active:not(&:disabled) {
-		background-color: var(--btn-highlight);
-		border-color: var(--btn-highlight);
-		color: var(--text);
-
-		text-decoration: none;
+	&:hover:not(:disabled),
+	&:active:not(:disabled),
+	&:focus:not(:disabled) {
+		background-color: var(--primary-hover);
+		border-color: var(--primary-hover);
 	}
 
-	&:focus:not(&:disabled),
-	&:active:not(&:disabled) {
-		outline: none;
+	&:focus-visible:not(:disabled) {
+		outline: 2px solid var(--primary);
+		outline-offset: 2px;
+	}
+
+	&.red {
+		--primary: var(--red);
+		--primary-hover: var(--red-muted);
+	}
+
+	&.green {
+		--primary: var(--green);
+		--primary-hover: var(--green-muted);
+	}
+
+	&.orange {
+		--primary: var(--orange);
+		--primary-hover: var(--orange-muted);
+	}
+
+	&.outline {
+		background-color: transparent;
+		color: var(--text);
 	}
 
 	&:disabled {
 		opacity: 0.6;
-		color: var(--text);
 		cursor: not-allowed;
-	}
-}
-
-@mixin small() {
-	font-size: 0.8rem;
-	font-weight: 500;
-	padding: 8px 20px;
-}
-
-@mixin red() {
-	--btn-highlight: var(--red);
-}
-
-@mixin green() {
-	--btn-highlight: var(--green);
-}
-
-button,
-.button,
-[role='button'] {
-	@include button;
-
-	&.secondary {
-		background-color: unset;
-	}
-
-	&.small {
-		@include small;
-	}
-
-	&.red {
-		@include red;
-	}
-
-	&.green {
-		@include green;
 	}
 }
