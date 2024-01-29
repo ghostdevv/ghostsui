@@ -1,4 +1,5 @@
 @use 'sass-hex-rgb/index.scss' as rgb;
+@use 'sass:color';
 @use 'sass:map';
 
 // prettier-ignore
@@ -17,8 +18,13 @@ $colours: (
     "secondary-hover": #5689f7,
 
     "orange": #f29b4b,
+    "orange-muted": #c07630,
+
     "green": #67c157,
+    "green-muted": #419732,
+
     "red": #f26c4b,
+    "red-muted": #c04c2f,
 );
 
 /* Utility function to return a colour by name */
