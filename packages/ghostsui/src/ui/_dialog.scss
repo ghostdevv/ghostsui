@@ -9,6 +9,7 @@ dialog {
 
 	padding: 32px;
 	width: min(80%, 600px);
+	max-height: 80vh;
 
 	@include media('<600px') {
 		min-width: 90%;
