@@ -1,0 +1,9 @@
+blockquote {
+	border-left: 8px solid var(--background-tertiary);
+	padding: 12px 16px;
+	quotes: none;
+
+	background-color: rgba(var(--background-tertiary-rgb), 0.2);
+
+	width: 100%;
+}

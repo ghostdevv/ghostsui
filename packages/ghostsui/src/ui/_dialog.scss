@@ -1,0 +1,29 @@
+@import 'include-media/dist/include-media.scss';
+
+dialog {
+	background: var(--background-secondary);
+	color: var(--text);
+
+	border-radius: 12px;
+	border: 0px solid transparent;
+
+	padding: 32px;
+	width: min(80%, 600px);
+	max-height: 80vh;
+
+	@include media('<600px') {
+		min-width: 90%;
+	}
+
+	&[open] {
+		display: block;
+	}
+
+	&:focus {
+		outline: 2px solid var(--primary);
+	}
+
+	&::backdrop {
+		background: rgba(18, 18, 20, 0.8);
+	}
+}

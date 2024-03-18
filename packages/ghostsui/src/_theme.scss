@@ -1,0 +1,45 @@
+@use 'sass-hex-rgb/index.scss' as rgb;
+@use 'sass:color';
+@use 'sass:map';
+
+// prettier-ignore
+$colours: (
+    "text": #eeeeee,
+    "text-grey": #969697,
+
+    "background-primary": #121214,
+    "background-secondary": #212123,
+    "background-tertiary": #29292a,
+
+    "primary": #2160ec,
+    "primary-hover": #174bbb,
+
+    "secondary": #437af1,
+    "secondary-hover": #5689f7,
+
+    "orange": #f29b4b,
+    "orange-muted": #c07630,
+
+    "green": #67c157,
+    "green-muted": #419732,
+
+    "red": #f26c4b,
+    "red-muted": #c04c2f,
+);
+
+/* Utility function to return a colour by name */
+@function colour($colour) {
+	@return map.get($colours, $colour);
+}
+
+/* Utility function to return a colour by name as rgb values */
+@function colourRGB($colour) {
+	@return rgb.toValues(map.get($colours, $colour));
+}
+
+@mixin vars() {
+	@each $variable, $colour in $colours {
+		--#{$variable}: #{$colour};
+		--#{$variable}-rgb: #{rgb.toValues($colour)};
+	}
+}

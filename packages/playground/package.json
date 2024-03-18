@@ -1,0 +1,16 @@
+{
+  "name": "playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "ghostsui": "workspace:^",
+    "svelte": "^4.2.12",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6"
+  }
+}

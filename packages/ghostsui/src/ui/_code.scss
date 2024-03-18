@@ -1,0 +1,21 @@
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd */
+kbd,
+/* https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code */
+code {
+	display: inline-block;
+	background-color: var(--background-tertiary);
+	padding: 4px 8px;
+	border-radius: 8px;
+	font-weight: 500;
+}
+
+pre code {
+	display: block;
+	width: 100%;
+
+	padding: 22px;
+	background-color: var(--background-secondary);
+	border-radius: 16px;
+
+	overflow-x: auto;
+}

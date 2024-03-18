@@ -1,0 +1,36 @@
+{
+  "name": "ghostsui",
+  "version": "1.6.0",
+  "description": "My personalised UI library",
+  "main": "./ghostsui.css",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghostdevv/ghostui.git"
+  },
+  "author": "GHOST ghostdevbusiness@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghostdevv/ghostui/issues"
+  },
+  "scripts": {
+    "dev": "pnpm sass src/ghostsui.scss:ghostsui.css src/theme-park.scss:theme-park.css --no-source-map --load-path=node_modules --watch",
+    "build": "./scripts/build.sh && publint"
+  },
+  "homepage": "https://github.com/ghostdevv/ghostui#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.18",
+    "esbuild": "^0.20.2",
+    "greset": "^2.0.0",
+    "include-media": "^2.0.0",
+    "publint": "^0.2.7",
+    "sass": "^1.72.0",
+    "sass-hex-rgb": "^1.0.1"
+  },
+  "files": [
+    "ghostsui.css",
+    "README.md",
+    "LICENSE",
+    "theme-park.css"
+  ]
+}

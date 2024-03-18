@@ -1,0 +1,22 @@
+[role='banner'],
+.banner {
+	width: 100%;
+
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+
+	background: var(--background-secondary);
+
+	padding: 20px 16px;
+	font-weight: 500;
+	font-size: 1.1rem;
+
+	&.green {
+		background-color: var(--green);
+	}
+
+	&.red {
+		background-color: var(--red);
+	}
+}

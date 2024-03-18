@@ -1,0 +1,43 @@
+@use './theme' as t;
+
+:root {
+	--main-bg-color: #{t.colour('background-primary')};
+
+	--modal-bg-color: #{t.colour('background-secondary')};
+	--modal-header-color: #{t.colour('background-tertiary')};
+	--modal-footer-color: #{t.colour('background-tertiary')};
+
+	--drop-down-menu-bg: #{t.colour('background-tertiary')};
+
+	--button-color: #{t.colour('primary')};
+	--button-color-hover: #{t.colour('primary-hover')};
+	--button-text: #{t.colour('text')};
+	--button-text-hover: #{t.colour('text')};
+
+	--accent-color: #{t.colourRGB('secondary')};
+	--accent-color-hover: #{t.colour('secondary-hover')};
+
+	--link-color: #{t.colour('secondary')};
+	--link-color-hover: #{t.colour('secondary-hover')};
+	--label-text-color: #{t.colour('text')};
+
+	--text: #{t.colour('text')};
+	--text-hover: #{t.colour('text-grey')};
+	--text-muted: #{t.colour('text-grey')};
+
+	--arr-queue-color: #{t.colour('green')};
+
+	--plex-poster-unwatched: #{t.colour('red')};
+
+	/* Made with https://codepen.io/jsm91/embed/ZEEawyZ */
+	--petio-spinner: invert(40%) sepia(21%) saturate(4807%) hue-rotate(207deg)
+		brightness(100%) contrast(89%);
+
+	--gitea-color-primary-dark-4: #{t.colourRGB('primary')};
+
+	--overseerr-gradient: radial-gradient(
+		circle,
+		rgba(#{t.colourRGB('background-tertiary')}, 1) 0%,
+		rgba(#{t.colourRGB('background-primary')}, 1) 60%
+	);
+}

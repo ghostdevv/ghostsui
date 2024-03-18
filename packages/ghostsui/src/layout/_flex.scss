@@ -1,0 +1,57 @@
+$gaps: (4, 8, 12, 16, 24, 32);
+$baseGap: 12px;
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+@mixin column {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	gap: $baseGap;
+
+	&.center {
+		text-align: center;
+		align-items: center;
+	}
+
+	&.full {
+		width: 100%;
+	}
+
+	&.vcenter {
+		justify-content: center;
+	}
+}
+
+@mixin row {
+	display: flex;
+	gap: $baseGap;
+
+	width: 100%;
+
+	&.center {
+		justify-content: center;
+	}
+
+	&.vcenter {
+		align-items: center;
+	}
+}
+
+.col,
+.column {
+	@include column;
+}
+
+.row {
+	@include row;
+}
+
+@each $gap in $gaps {
+	.g#{$gap} {
+		gap: #{$gap}px;
+	}
+}

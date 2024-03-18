@@ -1,0 +1,15 @@
+table {
+	border-collapse: collapse;
+	width: 100%;
+
+	td,
+	th {
+		border: 2px solid var(--background-tertiary);
+		padding: 12px;
+	}
+
+	th {
+		background-color: rgba(var(--background-tertiary-rgb), 0.5);
+		font-weight: bold;
+	}
+}
