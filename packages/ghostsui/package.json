@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/ghostdevv/ghostui#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "esbuild": "^0.19.10",
+    "autoprefixer": "^10.4.18",
+    "esbuild": "^0.20.2",
     "greset": "^2.0.0",
     "include-media": "^2.0.0",
     "publint": "^0.2.7",
-    "sass": "^1.69.6",
+    "sass": "^1.72.0",
     "sass-hex-rgb": "^1.0.1"
   },
   "files": [
