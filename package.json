@@ -11,5 +11,10 @@
 		"@svitejs/changesets-changelog-github-compact": "^1.1.0",
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.7"
+	},
+	"packageManager": "pnpm@10.14.0",
+	"engines": {
+		"npm": "forbidden, use pnpm",
+		"pnpm": "^10.14.0"
 	}
 }

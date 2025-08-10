@@ -14,6 +14,12 @@ importers:
       '@svitejs/changesets-changelog-github-compact':
         specifier: ^1.1.0
         version: 1.1.0
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
+      prettier-plugin-svelte:
+        specifier: ^3.2.7
+        version: 3.2.7(prettier@3.3.3)(svelte@4.2.12)
 
   packages/ghostsui:
     devDependencies:
@@ -40,7 +46,7 @@ importers:
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.2
-        version: 3.0.2(svelte@4.2.12)(vite@5.1.6)
+        version: 3.0.2(svelte@4.2.12)(vite@5.1.6(sass@1.72.0))
       ghostsui:
         specifier: workspace:^
         version: link:../ghostsui
@@ -52,7 +58,7 @@ importers:
         version: 5.4.2
       vite:
         specifier: ^5.1.6
-        version: 5.1.6
+        version: 5.1.6(sass@1.72.0)
 
 packages:
 
@@ -1330,9 +1336,20 @@ packages:
     resolution: {integrity: sha512-MkXsENfftWSRpzCzImcp4FRsCc3y1opwB73CfCNWyzMqArju2CrlMHlqB7VexKiPEOjGMbttv1r9fSCn5S610w==}
     engines: {node: '>=10'}
 
+  prettier-plugin-svelte@3.2.7:
+    resolution: {integrity: sha512-/Dswx/ea0lV34If1eDcG3nulQ63YNr5KPDfMsjbdtpSWOxKKJ7nAc2qlVuYwEvCr4raIuredNoR7K4JCkmTGaQ==}
+    peerDependencies:
+      prettier: ^3.0.0
+      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
+
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
     hasBin: true
 
   pseudomap@1.0.2:
@@ -2123,26 +2140,26 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.13.0':
     optional: true
 
-  '@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.1.6)':
+  '@sveltejs/vite-plugin-svelte-inspector@2.0.0(@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.12)(vite@5.1.6(sass@1.72.0)))(svelte@4.2.12)(vite@5.1.6(sass@1.72.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.1.6)
+      '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.12)(vite@5.1.6(sass@1.72.0))
       debug: 4.3.4
       svelte: 4.2.12
-      vite: 5.1.6
+      vite: 5.1.6(sass@1.72.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.12)(vite@5.1.6)':
+  '@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.12)(vite@5.1.6(sass@1.72.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.12)(vite@5.1.6)
+      '@sveltejs/vite-plugin-svelte-inspector': 2.0.0(@sveltejs/vite-plugin-svelte@3.0.2(svelte@4.2.12)(vite@5.1.6(sass@1.72.0)))(svelte@4.2.12)(vite@5.1.6(sass@1.72.0))
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.8
       svelte: 4.2.12
       svelte-hmr: 0.15.3(svelte@4.2.12)
-      vite: 5.1.6
-      vitefu: 0.2.5(vite@5.1.6)
+      vite: 5.1.6(sass@1.72.0)
+      vitefu: 0.2.5(vite@5.1.6(sass@1.72.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -3082,7 +3099,14 @@ snapshots:
       path-exists: 4.0.0
       which-pm: 2.0.0
 
+  prettier-plugin-svelte@3.2.7(prettier@3.3.3)(svelte@4.2.12):
+    dependencies:
+      prettier: 3.3.3
+      svelte: 4.2.12
+
   prettier@2.8.8: {}
+
+  prettier@3.3.3: {}
 
   pseudomap@1.0.2: {}
 
@@ -3423,17 +3447,18 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite@5.1.6:
+  vite@5.1.6(sass@1.72.0):
     dependencies:
       esbuild: 0.19.12
       postcss: 8.4.36
       rollup: 4.13.0
     optionalDependencies:
       fsevents: 2.3.3
+      sass: 1.72.0
 
-  vitefu@0.2.5(vite@5.1.6):
-    dependencies:
-      vite: 5.1.6
+  vitefu@0.2.5(vite@5.1.6(sass@1.72.0)):
+    optionalDependencies:
+      vite: 5.1.6(sass@1.72.0)
 
   wcwidth@1.0.1:
     dependencies:
