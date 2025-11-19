@@ -15,7 +15,8 @@
 	},
 	"scripts": {
 		"dev": "pnpm sass src/ghostsui.scss:ghostsui.css src/theme-park.scss:theme-park.css --no-source-map --load-path=node_modules --watch",
-		"build": "./scripts/build.sh && publint"
+		"build": "./scripts/build.sh && publint",
+		"prepublishOnly": "pnpm build"
 	},
 	"homepage": "https://github.com/ghostdevv/ghostui#readme",
 	"devDependencies": {
