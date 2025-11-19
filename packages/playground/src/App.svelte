@@ -1,12 +1,14 @@
 <script lang="ts">
 	import MarkdownGen from './testing-pages/MarkdownGen.svelte';
 	import KitchenSink from './testing-pages/KitchenSink.svelte';
+	import Other from './testing-pages/Other.svelte';
 	import Pico from './testing-pages/Pico.svelte';
 
 	const TESTING_PAGES = Object.freeze({
 		KitchenSink,
 		Pico,
 		MarkdownGen,
+		Other,
 	});
 
 	type Option = keyof typeof TESTING_PAGES;

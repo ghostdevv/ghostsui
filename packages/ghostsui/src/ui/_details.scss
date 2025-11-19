@@ -32,7 +32,7 @@ details {
 		}
 	}
 
-	&[open] summary {
+	&[open] > summary {
 		--s-rotation: 0deg;
 		padding-bottom: 8px;
 	}
