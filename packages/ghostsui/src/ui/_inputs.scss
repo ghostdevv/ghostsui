@@ -14,6 +14,10 @@ fieldset {
 	legend {
 		padding: 0px 8px;
 	}
+
+	> label:has(input[type='checkbox']) {
+		margin: 0 0 4px;
+	}
 }
 
 label:has(input),
@@ -26,16 +30,12 @@ label:has(textarea) {
 	&:has(input[type='radio']),
 	&:has(input[type='checkbox']) {
 		display: flex;
-		flex-flow: row-reverse;
 		align-items: center;
-		justify-content: space-between;
-		gap: 12px;
+		gap: 4px;
 
-		margin-top: 0px;
-	}
-
-	> :not([hidden]) {
-		margin-top: 8px;
+		input {
+			order: -1;
+		}
 	}
 }
 
@@ -130,6 +130,7 @@ input[type='radio'] {
 	appearance: none;
 
 	height: 22px;
+	margin: 0 4px 0 0;
 	outline: none;
 	display: inline-block;
 	position: relative;
@@ -168,7 +169,7 @@ input[type='radio'] {
 		border-color: var(--primary);
 	}
 
-	&:not(.switch) {
+	&:not([role='switch']) {
 		width: 22px;
 
 		&:after {
@@ -182,9 +183,7 @@ input[type='radio'] {
 }
 
 input[type='checkbox'] {
-	margin: 0px 4px 0px 0px;
-
-	&:not(.switch) {
+	&:not([role='switch']) {
 		border-radius: 8px;
 
 		&:after {
@@ -203,7 +202,7 @@ input[type='checkbox'] {
 		}
 	}
 
-	&.switch {
+	&[role='switch'] {
 		width: 38px;
 		border-radius: 12px;
 
