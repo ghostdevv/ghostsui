@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.0.0-beta.7
+
+[compare changes](https://github.com/ghostdevv/ghostsui/compare/v2.0.0-beta.6...v2.0.0-beta.7)
+
+### 🚀 Enhancements
+
+- Inputs have margin above them ([b555c75](https://github.com/ghostdevv/ghostsui/commit/b555c75))
+- Better dialog styles ([e5c010b](https://github.com/ghostdevv/ghostsui/commit/e5c010b))
+- Initial popover styles ([768be9c](https://github.com/ghostdevv/ghostsui/commit/768be9c))
+- Form/fieldset labels grow to 100% width ([4d57881](https://github.com/ghostdevv/ghostsui/commit/4d57881))
+
+### 🩹 Fixes
+
+- Repository field ([3ce0c8c](https://github.com/ghostdevv/ghostsui/commit/3ce0c8c))
+
+### 🏡 Chore
+
+- Switch to changelogen and make publishing workable ([2868f7b](https://github.com/ghostdevv/ghostsui/commit/2868f7b))
+- Fix release action ([7363f1d](https://github.com/ghostdevv/ghostsui/commit/7363f1d))
+- Remove unused prepublish script ([54e91c9](https://github.com/ghostdevv/ghostsui/commit/54e91c9))
+
+### ❤️ Contributors
+
+- Willow (GHOST) <git@willow.sh>
+
 ## v2.0.0-beta.6
 
 [compare changes](https://github.com/ghostdevv/ghostui/compare/v2.0.0-beta.5...v2.0.0-beta.6)
