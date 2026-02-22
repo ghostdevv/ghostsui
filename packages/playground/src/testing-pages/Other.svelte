@@ -28,3 +28,9 @@
 <dialog id="modal">
 	<h1>hii</h1>
 </dialog>
+
+<button command="toggle-popover" commandfor="popover">Popover</button>
+
+<div popover id="popover">
+	<h4>hii</h4>
+</div>

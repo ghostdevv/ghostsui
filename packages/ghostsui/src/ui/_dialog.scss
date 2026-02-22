@@ -28,3 +28,12 @@ dialog {
 		background: rgba(18, 18, 20, 0.8);
 	}
 }
+
+:popover-open {
+	background: var(--background-primary);
+	border: 2px solid var(--background-secondary);
+	box-shadow: 0px 0px 16px rgba(var(--background-tertiary-rgb), 0.4);
+	border-radius: 16px;
+	color: var(--text);
+	padding: 12px;
+}
