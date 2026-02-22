@@ -4,7 +4,9 @@
 	"scripts": {
 		"dev": "pnpm --parallel -r dev",
 		"build": "pnpm -r build",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"lint": "prettier --check . && pnpm --recursive lint",
+		"check": "pnpm --recursive check"
 	},
 	"devDependencies": {
 		"prettier": "^3.8.1",
