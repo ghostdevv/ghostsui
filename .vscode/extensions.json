@@ -1,7 +1,3 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "christian-kohler.npm-intellisense",
-        "svelte.svelte-vscode"
-    ]
+	"recommendations": ["esbenp.prettier-vscode"]
 }

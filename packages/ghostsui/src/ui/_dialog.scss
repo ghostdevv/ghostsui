@@ -1,0 +1,39 @@
+@import 'include-media/dist/include-media.scss';
+
+dialog {
+	background: var(--background-primary);
+	color: var(--text);
+
+	border: 2px solid var(--background-secondary);
+	box-shadow: 0px 0px 16px rgba(var(--background-tertiary-rgb), 0.3);
+	border-radius: 12px;
+
+	padding: 18px;
+	width: min(80%, 600px);
+	max-height: 80vh;
+
+	@include media('<600px') {
+		min-width: 90%;
+	}
+
+	&[open] {
+		display: block;
+	}
+
+	&:focus {
+		outline: 2px solid var(--primary);
+	}
+
+	&::backdrop {
+		background: rgba(18, 18, 20, 0.8);
+	}
+}
+
+:popover-open {
+	background: var(--background-primary);
+	border: 2px solid var(--background-secondary);
+	box-shadow: 0px 0px 16px rgba(var(--background-tertiary-rgb), 0.4);
+	border-radius: 16px;
+	color: var(--text);
+	padding: 12px;
+}

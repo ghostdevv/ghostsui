@@ -1,0 +1,38 @@
+kbd,
+code:not(pre code) {
+	display: inline-block;
+	white-space: pre;
+
+	padding: 2px 4px;
+	margin: 0px 2px;
+	border-radius: 8px;
+	background-color: var(--background-tertiary);
+}
+
+pre,
+code,
+kbd {
+	font-family: 'Comic Mono', monospace;
+}
+
+pre:has(code) {
+	width: 100%;
+	overflow-x: auto;
+
+	padding: 16px;
+	margin: 12px 0px;
+	border-radius: 8px;
+	background-color: var(--background-secondary) !important;
+	box-shadow:
+		1px 1px 6px var(--background-tertiary) inset,
+		-1px -1px 6px var(--background-primary) inset;
+
+	code {
+		display: block;
+		min-width: 100%;
+		width: max-content;
+
+		padding: 0px;
+		border-radius: 0px;
+	}
+}

@@ -1,0 +1,13 @@
+// This "sr-only" class is from MIT Licensed code by Tailwind Labs, Inc.
+// https://github.com/tailwindlabs/tailwindcss/blob/5035c106fb2d906bfd2940fbe406edd42f634f25/packages/tailwindcss/src/utilities.ts#L387
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}

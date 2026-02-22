@@ -1,0 +1,40 @@
+@use '../utils/flex';
+
+.card {
+	--card-bg: var(--background-secondary);
+	--card-highlight: var(--primary-hover);
+
+	display: flex;
+	flex-direction: column;
+
+	// box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+	background-color: var(--card-bg);
+	color: var(--text);
+	transition:
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out;
+
+	min-width: 250px;
+	align-self: stretch;
+	flex-grow: 1;
+	flex-shrink: 1;
+
+	padding: 32px;
+	border: 4px solid var(--card-bg);
+	border-radius: 16px;
+
+	&:is(button, .button, [role='button'], a) {
+		&:hover,
+		&:active,
+		&:focus-visible {
+			border: 4px solid var(--card-highlight);
+			background-color: var(--card-bg);
+			color: var(--text);
+		}
+	}
+
+	&.blue {
+		--card-bg: var(--primary);
+		--card-highlight: var(--primary-hover);
+	}
+}

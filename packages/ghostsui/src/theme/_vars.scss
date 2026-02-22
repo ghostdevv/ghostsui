@@ -1,0 +1,13 @@
+@use 'sass-hex-rgb/index.scss' as rgb;
+@use './colours' as t;
+
+@mixin vars() {
+	@each $variable, $colour in t.$colours {
+		--#{$variable}: #{$colour};
+		--#{$variable}-rgb: #{rgb.toValues($colour)};
+	}
+
+	--font-family: 'Quicksand', sans-serif;
+
+	--icon-chevron: url('src/icons/chevron.svg');
+}

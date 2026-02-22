@@ -1,0 +1,45 @@
+blockquote,
+.markdown-alert {
+	width: 100%;
+	padding: 12px 16px;
+	margin: 12px 0px;
+
+	border-left: 8px solid var(--background-tertiary);
+	background-color: rgba(var(--background-tertiary-rgb), 0.2);
+	quotes: none;
+}
+
+.markdown-alert {
+	border-color: var(--alert-colour);
+
+	&.markdown-alert-note {
+		--alert-colour: var(--secondary);
+	}
+
+	&.markdown-alert-tip {
+		--alert-colour: var(--green);
+	}
+
+	&.markdown-alert-important {
+		--alert-colour: #be95ff;
+	}
+
+	&.markdown-alert-warning {
+		--alert-colour: var(--orange);
+	}
+
+	&.markdown-alert-caution {
+		--alert-colour: var(--red);
+	}
+
+	.markdown-alert-title {
+		color: var(--alert-colour);
+		fill: var(--alert-colour);
+		font-size: 1.3rem;
+		font-weight: 600;
+
+		svg {
+			margin-right: 8px;
+		}
+	}
+}

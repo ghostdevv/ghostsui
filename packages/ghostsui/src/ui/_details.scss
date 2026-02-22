@@ -1,0 +1,39 @@
+details {
+	margin: 12px 0;
+	width: 100%;
+
+	summary {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		> * {
+			margin: 0;
+		}
+
+		&::marker {
+			display: none;
+		}
+
+		&:before {
+			display: block;
+			margin-right: 6px;
+			margin-left: 2px;
+			height: 12px;
+			width: 12px;
+			right: 100px;
+			rotate: var(--s-rotation, -90deg);
+			transition: rotate 0.2s ease-in-out;
+			content: '';
+			background-image: var(--icon-chevron);
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+
+	&[open] > summary {
+		--s-rotation: 0deg;
+		padding-bottom: 8px;
+	}
+}

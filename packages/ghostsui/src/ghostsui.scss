@@ -1,0 +1,43 @@
+/* Theme Imports */
+@use './theme/vars.scss' as t;
+
+/* Core base styles */
+@import './theme/font.scss';
+@import 'greset/greset.css';
+
+/* Apply theme */
+:root,
+::backdrop {
+	font-size: 16px;
+	@include t.vars();
+}
+
+head,
+body {
+	background-color: var(--background-primary);
+	font-family: var(--font-family);
+	color: var(--text);
+}
+
+/* UI */
+@import './ui/scrollbar';
+@import './ui/anchor';
+@import './ui/mark';
+@import './ui/hr';
+@import './ui/cards';
+@import './ui/lists';
+@import './ui/inputs';
+@import './ui/tables';
+@import './ui/buttons';
+@import './ui/banners';
+@import './ui/blockquote';
+@import './ui/dialog';
+@import './ui/code';
+@import './ui/figure';
+@import './ui/section';
+@import './ui/text';
+@import './ui/details';
+
+/* Utils */
+@import './utils/flex';
+@import './utils/screen-readers';

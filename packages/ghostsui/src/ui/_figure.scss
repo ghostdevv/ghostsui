@@ -1,0 +1,18 @@
+figcaption {
+	color: var(--text-grey);
+	padding: 4px 0px;
+}
+
+figure {
+	margin: 12px 0px;
+}
+
+figure:has(figcaption) {
+	width: fit-content;
+
+	figcaption {
+		padding: 8px 12px;
+		background-color: rgba(var(--background-tertiary-rgb), 0.2);
+		font-size: 0.9rem;
+	}
+}
