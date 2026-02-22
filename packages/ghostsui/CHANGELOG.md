@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0-beta.8
+
+### Patch Changes
+
+- fix: fieldset/form width should grow ([`d713b5b`](https://github.com/ghostdevv/ghostsui/commit/d713b5b9c2545bbbe3307dd45130435b86538272))
+
 ## v2.0.0-beta.7
 
 [compare changes](https://github.com/ghostdevv/ghostsui/compare/v2.0.0-beta.6...v2.0.0-beta.7)
