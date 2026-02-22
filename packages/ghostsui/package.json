@@ -6,20 +6,20 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ghostdevv/ghostui.git"
+		"url": "git+https://github.com/ghostdevv/ghostsui.git"
 	},
 	"author": "GHOST ghostdevbusiness@gmail.com",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/ghostdevv/ghostui/issues"
+		"url": "https://github.com/ghostdevv/ghostsui/issues"
 	},
+	"homepage": "https://github.com/ghostdevv/ghostsui#readme",
 	"scripts": {
 		"dev": "pnpm sass src/ghostsui.scss:ghostsui.css src/theme-park.scss:theme-park.css --no-source-map --load-path=node_modules --watch",
 		"build": "./scripts/build.sh && publint",
 		"prepublishOnly": "pnpm build",
 		"release": "changelogen --prerelease --release"
 	},
-	"homepage": "https://github.com/ghostdevv/ghostui#readme",
 	"devDependencies": {
 		"changelogen": "^0.6.2",
 		"esbuild": "^0.27.3",
