@@ -40,6 +40,10 @@
 		"./modal": {
 			"types": "./dist/modal/index.d.ts",
 			"svelte": "./dist/modal/index.js"
+		},
+		"./toasts": {
+			"types": "./dist/toasts/index.d.ts",
+			"svelte": "./dist/toasts/index.js"
 		}
 	},
 	"peerDependencies": {

@@ -8,6 +8,7 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"devDependencies": {
+		"@ghostsui/svelte": "workspace:^",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
 		"ghostsui": "workspace:^",
 		"svelte": "^5.53.2",
