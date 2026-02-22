@@ -1,0 +1,53 @@
+{
+	"name": "@ghostsui/svelte",
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "svelte-package --input src",
+		"dev": "pnpm build --watch",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"lint": "publint"
+	},
+	"keywords": [
+		"svelte"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ghostdevv/ghostsui.git",
+		"directory": "packages/svelte"
+	},
+	"bugs": {
+		"url": "https://github.com/ghostdevv/ghostsui/issues"
+	},
+	"homepage": "https://github.com/ghostdevv/ghostsui#readme",
+	"author": {
+		"name": "Willow (GHOST)",
+		"url": "https://ghostdev.xyz"
+	},
+	"license": "MIT",
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {},
+	"peerDependencies": {
+		"svelte": "^5.0.0",
+		"ghostsui": "workspace:^"
+	},
+	"devDependencies": {
+		"@sveltejs/package": "^2.5.7",
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.4.1",
+		"publint": "^0.3.17",
+		"svelte": "^5.51.0",
+		"svelte-check": "^4.3.6",
+		"typescript": "^5.9.3"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

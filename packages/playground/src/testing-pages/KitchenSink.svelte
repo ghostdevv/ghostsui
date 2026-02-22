@@ -69,25 +69,29 @@
 		height="24"
 		viewBox="0 0 24 24"
 		fill="none"
-		xmlns="http://www.w3.org/2000/svg">
+		xmlns="http://www.w3.org/2000/svg"
+	>
 		<g class="oi-ghost">
 			<path
 				class="oi-fill"
 				fill-rule="evenodd"
 				clip-rule="evenodd"
 				d="M9.76779 9.41425C10.3201 9.41425 10.7678 9.86196 10.7678 10.4142L10.7678 10.9952C10.8028 11.2892 10.7076 11.5958 10.482 11.8214L10.4749 11.8285C10.1889 12.1145 9.75878 12.2 9.3851 12.0452C9.01143 11.8905 8.76779 11.5258 8.76779 11.1214L8.76779 10.4142C8.76779 9.86196 9.2155 9.41425 9.76779 9.41425Z"
-				fill="currentColor" />
+				fill="currentColor"
+			/>
 			<path
 				class="oi-fill"
 				fill-rule="evenodd"
 				clip-rule="evenodd"
 				d="M13.7678 9.41425C14.3201 9.41425 14.7678 9.86196 14.7678 10.4142L14.7678 10.9952C14.8028 11.2892 14.7076 11.5958 14.482 11.8214L14.4749 11.8285C14.1889 12.1145 13.7588 12.2 13.3851 12.0452C13.0114 11.8905 12.7678 11.5258 12.7678 11.1214L12.7678 10.4142C12.7678 9.86196 13.2155 9.41425 13.7678 9.41425Z"
-				fill="currentColor" />
+				fill="currentColor"
+			/>
 			<path
 				class="oi-vector"
 				d="M15.0705 20.4349L15.6721 19.6361L15.0705 20.4349C15.9178 21.073 17.072 21.1219 17.9703 20.5581L19.0632 19.8721C19.6461 19.5062 20 18.8663 20 18.1781V10.9564C20 6.5563 16.4124 3 12 3C7.58763 3 4 6.5563 4 10.9564V18.1781C4 18.8663 4.35386 19.5062 4.93679 19.8721L6.11016 20.6086C6.94173 21.1305 7.99944 21.1305 8.83102 20.6086L9.64396 20.0983C9.82544 19.9844 10.0569 19.9844 10.2384 20.0983L10.9709 20.5581C11.8692 21.1219 13.0234 21.073 13.8707 20.4349L14.1345 20.2362C14.3331 20.0866 14.608 20.0866 14.8067 20.2362L15.0705 20.4349Z"
 				stroke="currentColor"
-				stroke-width="2" />
+				stroke-width="2"
+			/>
 		</g>
 	</svg>
 </button>
@@ -305,7 +309,8 @@ p q r s t u v w x y z | ~ </pre>
 
 				<h2>Code</h2>
 				<pre><code
-						>console.log('Hello World              asdddddddddddddddddddddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssss')</code></pre>
+						>console.log('Hello World              asdddddddddddddddddddddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssss')</code
+					></pre>
 			</div>
 			<footer><p><a href="#top">[Top]</a></p></footer>
 		</article>
@@ -315,7 +320,8 @@ p q r s t u v w x y z | ~ </pre>
 				<p><a href="#!">This is a text link</a>.</p>
 				<p>
 					<strong
-						>Strong is used to indicate strong importance.</strong>
+						>Strong is used to indicate strong importance.</strong
+					>
 				</p>
 				<p><em>This text has added emphasis.</em></p>
 				<p>
@@ -330,8 +336,8 @@ p q r s t u v w x y z | ~ </pre>
 					rendered, non-textual annotation.
 				</p>
 				<p>
-					I have sneakily inserted a <code>code</code> element in this
-					text to see how it looks.
+					I have sneakily inserted a <code>code</code> element in this text
+					to see how it looks.
 				</p>
 				<p>
 					<del>This text is deleted</del> and
@@ -342,16 +348,19 @@ p q r s t u v w x y z | ~ </pre>
 				<p>Subscript for things like H<sub>2</sub>O.</p>
 				<p>
 					<small
-						>This small text is small for for fine print, etc.</small>
+						>This small text is small for for fine print, etc.</small
+					>
 				</p>
 				<p>
 					Abbreviation: <abbr title="HyperText Markup Language"
-						>HTML</abbr>
+						>HTML</abbr
+					>
 				</p>
 				<p>
 					<q
 						cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q"
-						>This text is a short inline quotation.</q>
+						>This text is a short inline quotation.</q
+					>
 				</p>
 				<p><cite>This is a citation.</cite></p>
 				<p>The <dfn>dfn element</dfn> indicates a definition.</p>
@@ -362,7 +371,8 @@ p q r s t u v w x y z | ~ </pre>
 				</p>
 				<p>
 					The time element: <time datetime="2013-04-06T12:32+00:00"
-						>2 weeks ago</time>
+						>2 weeks ago</time
+					>
 				</p>
 			</div>
 			<footer><p><a href="#top">[Top]</a></p></footer>
@@ -394,7 +404,8 @@ p q r s t u v w x y z | ~ </pre>
 					<img
 						src="https://http.cat/418"
 						class="small"
-						alt="cat in a teapot" />
+						alt="cat in a teapot"
+					/>
 				</p>
 				<h3>
 					Wrapped in a <code>&lt;figure&gt;</code> element, no
@@ -404,7 +415,8 @@ p q r s t u v w x y z | ~ </pre>
 					<img
 						src="https://http.cat/418"
 						class="small"
-						alt="cat in a teapot" />
+						alt="cat in a teapot"
+					/>
 				</figure>
 				<h3>
 					Wrapped in a <code>&lt;figure&gt;</code> element, with a
@@ -414,7 +426,8 @@ p q r s t u v w x y z | ~ </pre>
 					<img
 						src="https://http.cat/418"
 						class="small"
-						alt="cat in a teapot" />
+						alt="cat in a teapot"
+					/>
 					<figcaption>Here is a caption for this image.</figcaption>
 				</figure>
 
@@ -484,7 +497,8 @@ p q r s t u v w x y z | ~ </pre>
 			<header><h2>Inline SVG</h2></header>
 			<div>
 				<svg width="100px" height="100px"
-					><circle cx="100" cy="100" r="100" fill="#1fa3ec" /></svg>
+					><circle cx="100" cy="100" r="100" fill="#1fa3ec" /></svg
+				>
 			</div>
 			<footer><p><a href="#top">[Top]</a></p></footer>
 		</article>
@@ -513,7 +527,8 @@ p q r s t u v w x y z | ~ </pre>
 
 						<input
 							type="password"
-							placeholder="Type your Password" />
+							placeholder="Type your Password"
+						/>
 					</label>
 				</p>
 				<p>
@@ -552,7 +567,8 @@ p q r s t u v w x y z | ~ </pre>
 						<input
 							class="is-error"
 							type="text"
-							placeholder="Text Input" />
+							placeholder="Text Input"
+						/>
 					</label>
 				</p>
 				<p>
@@ -561,7 +577,8 @@ p q r s t u v w x y z | ~ </pre>
 						<input
 							class="is-valid"
 							type="text"
-							placeholder="Text Input" />
+							placeholder="Text Input"
+						/>
 					</label>
 				</p>
 			</fieldset>
@@ -628,7 +645,8 @@ p q r s t u v w x y z | ~ </pre>
 						<textarea
 							rows="8"
 							cols="48"
-							placeholder="Enter your message here"></textarea>
+							placeholder="Enter your message here"
+						></textarea>
 					</label>
 				</p>
 			</fieldset>

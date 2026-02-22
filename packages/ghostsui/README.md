@@ -9,7 +9,7 @@ My personal styles I use across my projects. It's not intended for public use bu
 
 You can use by importing it or via a cdn:
 
--   CDN (easiest method)
+- CDN (easiest method)
 
     ```html
     <link
@@ -18,7 +18,7 @@ You can use by importing it or via a cdn:
     />
     ```
 
--   When using bundlers such as vite or rollup
+- When using bundlers such as vite or rollup
 
     ```bash
     npm install ghostsui -D
@@ -28,7 +28,7 @@ You can use by importing it or via a cdn:
     import 'ghostsui';
     ```
 
--   CSS Import
+- CSS Import
 
     ```bash
     npm install ghostsui
