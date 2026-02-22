@@ -22,3 +22,9 @@
 		<input type="checkbox" />
 	</label>
 </form>
+
+<button command="show-modal" commandfor="modal">Open Modal</button>
+
+<dialog id="modal">
+	<h1>hii</h1>
+</dialog>
