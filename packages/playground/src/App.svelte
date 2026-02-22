@@ -23,7 +23,8 @@
 		<button
 			class="outline"
 			class:active={selected == option}
-			onclick={() => (selected = option)}>
+			onclick={() => (selected = option)}
+		>
 			{option}
 		</button>
 	{/each}
