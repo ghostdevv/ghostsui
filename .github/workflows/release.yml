@@ -33,3 +33,4 @@ jobs:
 
             - name: Publish
               run: pnpm publish --no-git-checks --tag beta
+              working-directory: packages/ghostsui
