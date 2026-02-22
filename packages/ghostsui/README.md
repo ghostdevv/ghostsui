@@ -1,5 +1,8 @@
 # GHOSTs UI
 
+> [!WARNING]
+> the main branch has the v2 beta, which is published on the beta dist tag
+
 My personal styles I use across my projects. It's not intended for public use but feel free to, I attempt to follow semver as best as possible! It includes [`greset`](https://github.com/ghostdevv/greset), semantically applied styles, and a handful of utility classes.
 
 # Use
