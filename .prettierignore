@@ -1,6 +1,6 @@
 node_modules
 /pnpm-lock.yaml
-/.changeset/*.md
+/.changeset
 /packages/playground/dist
 /packages/ghostsui/ghostsui.css
 /packages/ghostsui/theme-park.css
