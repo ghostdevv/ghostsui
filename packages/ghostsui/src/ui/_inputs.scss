@@ -37,6 +37,10 @@ label:has(textarea) {
 			order: -1;
 		}
 	}
+
+	> :is(input:not([type='radio'], [type='checkbox']), textarea) {
+		margin-top: 6px;
+	}
 }
 
 @mixin base {

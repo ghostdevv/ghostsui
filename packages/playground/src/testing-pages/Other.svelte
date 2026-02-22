@@ -5,3 +5,20 @@
 		<p>qux</p>
 	</details>
 </details>
+
+<form>
+	<label>
+		Foo
+		<input type="text" />
+	</label>
+
+	<label>
+		Bar
+		<textarea></textarea>
+	</label>
+
+	<label>
+		Baz
+		<input type="checkbox" />
+	</label>
+</form>
