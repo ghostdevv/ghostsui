@@ -17,7 +17,6 @@
 	"scripts": {
 		"dev": "pnpm sass src/ghostsui.scss:ghostsui.css src/theme-park.scss:theme-park.css --no-source-map --load-path=node_modules --watch",
 		"build": "./scripts/build.sh && publint",
-		"prepublishOnly": "pnpm build",
 		"release": "changelogen --prerelease --release"
 	},
 	"devDependencies": {
