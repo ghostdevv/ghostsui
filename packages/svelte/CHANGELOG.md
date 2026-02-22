@@ -1,5 +1,11 @@
 # @ghostsui/svelte
 
+## 1.0.0-beta.2
+
+### Minor Changes
+
+- feat: add toasts ([`8b92ce7`](https://github.com/ghostdevv/ghostsui/commit/8b92ce7f5d9fb383502af073916d4d578720f2a9))
+
 ## 1.0.0-beta.1
 
 ### Minor Changes
