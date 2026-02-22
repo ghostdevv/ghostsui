@@ -6,14 +6,18 @@
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ghostdevv/ghostsui.git"
+		"url": "git+https://github.com/ghostdevv/ghostsui.git",
+		"directory": "packages/ghostsui"
 	},
-	"author": "GHOST ghostdevbusiness@gmail.com",
-	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/ghostdevv/ghostsui/issues"
 	},
 	"homepage": "https://github.com/ghostdevv/ghostsui#readme",
+	"author": {
+		"name": "Willow (GHOST)",
+		"url": "https://ghostdev.xyz"
+	},
+	"license": "MIT",
 	"scripts": {
 		"dev": "pnpm sass src/ghostsui.scss:ghostsui.css src/theme-park.scss:theme-park.css --no-source-map --load-path=node_modules --watch",
 		"build": "./scripts/build.sh && publint",
