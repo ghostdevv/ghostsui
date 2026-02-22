@@ -5,3 +5,6 @@ node_modules
 /packages/ghostsui/ghostsui.css
 /packages/ghostsui/theme-park.css
 /packages/ghostsui/CHANGELOG.md
+/packages/svelte/.svelte-kit
+/packages/svelte/CHANGELOG.md
+/packages/svelte/dist

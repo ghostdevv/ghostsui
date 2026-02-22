@@ -33,10 +33,18 @@
 	"sideEffects": [
 		"**/*.css"
 	],
-	"exports": {},
+	"publishConfig": {
+		"access": "public"
+	},
+	"exports": {
+		"./modal": {
+			"types": "./dist/modal/index.d.ts",
+			"svelte": "./dist/modal/index.js"
+		}
+	},
 	"peerDependencies": {
-		"svelte": "^5.0.0",
-		"ghostsui": "workspace:^"
+		"ghostsui": "workspace:^",
+		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
 		"@sveltejs/package": "^2.5.7",
@@ -47,7 +55,7 @@
 		"svelte-check": "^4.3.6",
 		"typescript": "^5.9.3"
 	},
-	"publishConfig": {
-		"access": "public"
+	"dependencies": {
+		"melt": "^0.44.0"
 	}
 }
