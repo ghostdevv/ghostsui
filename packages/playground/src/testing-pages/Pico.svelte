@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <header>
 	<hgroup>
 		<h1>Pico</h1>
@@ -18,16 +20,14 @@
 				name="firstname"
 				placeholder="First name"
 				aria-label="First name"
-				required
-			/>
+				required />
 			<input
 				type="email"
 				name="email"
 				placeholder="Email address"
 				aria-label="Email address"
 				autocomplete="email"
-				required
-			/>
+				required />
 			<button type="submit">Subscribe</button>
 			<fieldset>
 				<label for="terms">
@@ -35,12 +35,9 @@
 						type="checkbox"
 						role="switch"
 						id="terms"
-						name="terms"
-					/>
+						name="terms" />
 					I agree to the
-					<a href="#" onclick="event.preventDefault()"
-						>Privacy Policy</a
-					>
+					<a href="#">Privacy Policy</a>
 				</label>
 			</fieldset>
 		</form>
@@ -71,7 +68,7 @@
 		</ul>
 
 		<h3>Inline text elements</h3>
-		<p><a href="#" onclick="event.preventDefault()">Link</a></p>
+		<p><a href="#">Link</a></p>
 		<p><strong>Bold</strong></p>
 		<p><em>Italic</em></p>
 		<p><u>Underline</u></p>
@@ -131,8 +128,7 @@
 				type="search"
 				id="search"
 				name="search"
-				placeholder="Search"
-			/>
+				placeholder="Search" />
 
 			<label for="text">Text</label>
 			<input type="text" id="text" name="text" placeholder="Text" />
@@ -157,8 +153,7 @@
 					max="100"
 					value="50"
 					id="range"
-					name="range"
-				/>
+					name="range" />
 			</label>
 
 			<label for="valid">
@@ -168,8 +163,7 @@
 					id="valid"
 					name="valid"
 					placeholder="Valid"
-					aria-invalid="false"
-				/>
+					aria-invalid="false" />
 			</label>
 			<label for="invalid">
 				Invalid
@@ -178,8 +172,7 @@
 					id="invalid"
 					name="invalid"
 					placeholder="Invalid"
-					aria-invalid="true"
-				/>
+					aria-invalid="true" />
 			</label>
 			<label for="disabled">
 				Disabled
@@ -188,8 +181,7 @@
 					id="disabled"
 					name="disabled"
 					placeholder="Disabled"
-					disabled
-				/>
+					disabled />
 			</label>
 
 			<label for="date"
@@ -214,8 +206,7 @@
 						type="checkbox"
 						id="checkbox-1"
 						name="checkbox-1"
-						checked
-					/>
+						checked />
 					Checkbox
 				</label>
 				<label for="checkbox-2">
@@ -232,8 +223,7 @@
 						id="radio-1"
 						name="radio"
 						value="radio-1"
-						checked
-					/>
+						checked />
 					Radio button
 				</label>
 				<label for="radio-2">
@@ -241,8 +231,7 @@
 						type="radio"
 						id="radio-2"
 						name="radio"
-						value="radio-2"
-					/>
+						value="radio-2" />
 					Radio button
 				</label>
 			</fieldset>
@@ -255,8 +244,7 @@
 						id="switch-1"
 						name="switch-1"
 						role="switch"
-						checked
-					/>
+						checked />
 					Switch
 				</label>
 				<label for="switch-2">
@@ -264,23 +252,13 @@
 						type="checkbox"
 						id="switch-2"
 						name="switch-2"
-						role="switch"
-					/>
+						role="switch" />
 					Switch
 				</label>
 			</fieldset>
 
-			<button type="reset" value="Reset" onclick="event.preventDefault()">
-				Reset
-			</button>
-
-			<button
-				type="submit"
-				value="Submit"
-				onclick="event.preventDefault()"
-			>
-				Submit
-			</button>
+			<button type="reset" value="Reset"> Reset </button>
+			<button type="submit" value="Submit"> Submit </button>
 		</form>
 	</section>
 
@@ -325,8 +303,7 @@
 		</p>
 		<footer>
 			<small
-				>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small
-			>
+				>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
 		</footer>
 	</article>
 
@@ -338,8 +315,7 @@
 					name="email"
 					type="email"
 					placeholder="Enter your email"
-					autocomplete="email"
-				/>
+					autocomplete="email" />
 				<input type="submit" value="Subscribe" />
 			</fieldset>
 		</form>
@@ -362,8 +338,7 @@
 	<p>
 		Based on the
 		<a
-			href="https://github.com/picocss/examples/blob/2f150ba14c1c3ad023b707ce2d5135da9db63b72/v2-html/index.html"
-		>
+			href="https://github.com/picocss/examples/blob/2f150ba14c1c3ad023b707ce2d5135da9db63b72/v2-html/index.html">
 			Pico CSS Preview Example
 		</a>
 	</p>

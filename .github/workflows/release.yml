@@ -2,24 +2,26 @@ name: Release Package
 
 on:
     release:
-        types: [created]
-
+        types:
+            - created
 jobs:
-    publish-npm:
+    release:
+        name: Release
         runs-on: ubuntu-latest
         permissions:
             id-token: write
+            contents: read
         steps:
             - name: Checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
             - name: Setup PNPM
-              uses: pnpm/action-setup@v4.1.0
+              uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
 
-            - name: Setup Node 22
-              uses: actions/setup-node@v4
+            - name: Setup Node 24
+              uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
               with:
-                  node-version: 22
+                  node-version: 24
                   registry-url: https://registry.npmjs.org/
                   cache: pnpm
 
@@ -27,12 +29,7 @@ jobs:
               run: pnpm install --frozen-lockfile
 
             - name: Build
-              run: pnpm run --filter ghostsui build
+              run: pnpm build
 
             - name: Publish
-              run: |
-                  pnpm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}"
-                  pnpm publish --no-git-checks
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                  NPM_CONFIG_PROVENANCE: true
+              run: pnpm publish --no-git-checks

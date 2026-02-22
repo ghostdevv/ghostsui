@@ -1,8 +1,7 @@
 import App from './App.svelte';
+import { mount } from 'svelte';
 import 'ghostsui';
 
-const app = new App({
+mount(App, {
 	target: document.getElementById('app')!,
 });
-
-export default app;

@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <details>
 	<summary>foo</summary>
 	<details style="padding-left: 8px;">

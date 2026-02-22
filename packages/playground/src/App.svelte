@@ -15,7 +15,7 @@
 
 	const options = Object.keys(TESTING_PAGES) as Option[];
 
-	let selected: Option = 'KitchenSink';
+	let selected: Option = $state('KitchenSink');
 </script>
 
 <header>
@@ -23,7 +23,7 @@
 		<button
 			class="outline"
 			class:active={selected == option}
-			on:click={() => (selected = option)}>
+			onclick={() => (selected = option)}>
 			{option}
 		</button>
 	{/each}
@@ -32,5 +32,6 @@
 </header>
 
 {#if selected}
-	<svelte:component this={TESTING_PAGES[selected]}></svelte:component>
+	{@const SvelteComponent = TESTING_PAGES[selected]}
+	<SvelteComponent></SvelteComponent>
 {/if}
