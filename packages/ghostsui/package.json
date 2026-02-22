@@ -21,11 +21,9 @@
 	"scripts": {
 		"dev": "pnpm sass src/ghostsui.scss:ghostsui.css src/theme-park.scss:theme-park.css --no-source-map --load-path=node_modules --watch",
 		"build": "./scripts/build.sh && publint",
-		"release": "changelogen --prerelease --release",
 		"lint": "publint"
 	},
 	"devDependencies": {
-		"changelogen": "^0.6.2",
 		"esbuild": "^0.27.3",
 		"greset": "^2.0.0",
 		"include-media": "^2.0.0",

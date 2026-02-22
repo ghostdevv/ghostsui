@@ -9,6 +9,8 @@
 		"check": "pnpm --recursive check"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.29.8",
+		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.0"
 	},
