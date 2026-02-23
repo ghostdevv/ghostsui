@@ -73,7 +73,7 @@
     This only needs to be rendered once per application.
 
     @example Render Toasts
-    ```
+    ```svelte
     <script lang="ts">
         import { Toasts } from '@ghostsui/svelte/toasts';
         import IconClose from '~icons/lucide/x';
