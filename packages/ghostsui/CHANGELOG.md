@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.0-beta.9
+
+### Minor Changes
+
+- feat: better input border ([`4b846d2`](https://github.com/ghostdevv/ghostsui/commit/4b846d20ba34f1f3c9f2a6e9685478fc989bd2fb))
+
+- breaking: add default styles to main ([`81345ed`](https://github.com/ghostdevv/ghostsui/commit/81345ed7105969619b11b9793b07d78af5ded33b))
+
+### Patch Changes
+
+- fix: label input spacing includes selects ([`46509b1`](https://github.com/ghostdevv/ghostsui/commit/46509b1ee4d9ba123cf737ccf430b7818b8462a9))
+
+- fix: ship changelog ([`4e08e07`](https://github.com/ghostdevv/ghostsui/commit/4e08e078dddd81161d440a4671d463ccfff01975))
+
+- fix: set color-scheme to dark ([`1b573df`](https://github.com/ghostdevv/ghostsui/commit/1b573df311501efd0eeb9871db5c5a5c72f2bf40))
+
+- chore: update homepage url ([`7954540`](https://github.com/ghostdevv/ghostsui/commit/7954540379129cd573383a416f0c40c14523093f))
+
 ## 2.0.0-beta.8
 
 ### Patch Changes
