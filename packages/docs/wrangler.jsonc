@@ -10,4 +10,5 @@
 	},
 	"workers_dev": false,
 	"preview_urls": true,
+	"routes": [{ "pattern": "ui.ghostdev.xyz", "custom_domain": true }],
 }
