@@ -43,7 +43,7 @@ label:has(textarea) {
 		}
 	}
 
-	> :is(input:not([type='radio'], [type='checkbox']), textarea) {
+	> :is(input:not([type='radio'], [type='checkbox']), textarea, select) {
 		margin-top: 6px;
 	}
 }
