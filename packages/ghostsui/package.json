@@ -35,6 +35,7 @@
 		"ghostsui.css",
 		"README.md",
 		"LICENSE",
-		"theme-park.css"
+		"theme-park.css",
+		"CHANGELOG.md"
 	]
 }

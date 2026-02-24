@@ -27,8 +27,9 @@
 	"license": "MIT",
 	"files": [
 		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
+		"CHANGELOG.md",
+		"README.md",
+		"LICENSE"
 	],
 	"sideEffects": [
 		"**/*.css"
