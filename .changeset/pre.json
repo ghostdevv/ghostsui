@@ -6,8 +6,16 @@
     "@ghostsui/svelte": "1.0.0-beta.0"
   },
   "changesets": [
+    "clean-goats-relax",
+    "deep-lights-grow",
+    "gentle-mammals-report",
     "icy-jokes-occur",
+    "itchy-regions-grab",
+    "khaki-teeth-wash",
+    "loud-worlds-fetch",
     "pink-pears-join",
-    "some-meteors-fry"
+    "some-meteors-fry",
+    "spotty-dragons-start",
+    "tough-stars-joke"
   ]
 }
