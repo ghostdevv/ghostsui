@@ -3,8 +3,6 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [svelte()],
-
-	optimizeDeps: {
-		exclude: ['ghostsui'],
-	},
+	server: { port: 6173 },
+	optimizeDeps: { exclude: ['ghostsui'] },
 });

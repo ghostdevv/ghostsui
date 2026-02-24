@@ -8,3 +8,4 @@ node_modules
 /packages/svelte/.svelte-kit
 /packages/svelte/CHANGELOG.md
 /packages/svelte/dist
+/packages/docs/.svelte-kit
