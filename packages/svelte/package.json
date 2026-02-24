@@ -45,6 +45,10 @@
 		"./toasts": {
 			"types": "./dist/toasts/index.d.ts",
 			"svelte": "./dist/toasts/index.js"
+		},
+		"./password": {
+			"types": "./dist/password/index.d.ts",
+			"svelte": "./dist/password/index.js"
 		}
 	},
 	"peerDependencies": {
