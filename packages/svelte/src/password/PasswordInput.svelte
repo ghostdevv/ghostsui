@@ -18,6 +18,11 @@
 		label: string;
 
 		/**
+		 * Applies the "sr-only" class to the label.
+		 */
+		hideLabel?: boolean;
+
+		/**
 		 * The icon to display when the password is visible.
 		 */
 		iconOn: Component;
@@ -53,6 +58,7 @@
 	let {
 		label,
 		disabled,
+		hideLabel,
 		iconOn: IconOn,
 		iconOff: IconOff,
 		value = $bindable(''),
@@ -63,7 +69,7 @@
 	const id = $props.id();
 </script>
 
-<label for={id}>{label}</label>
+<label for={id} class:sr-only={hideLabel}>{label}</label>
 
 <div class="password-input">
 	<input {...attrs} {id} {type} bind:value {disabled} />
