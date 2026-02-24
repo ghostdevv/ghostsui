@@ -9,6 +9,7 @@
 :root,
 ::backdrop {
 	font-size: 16px;
+	color-scheme: dark;
 	@include t.vars();
 }
 
