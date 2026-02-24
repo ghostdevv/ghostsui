@@ -58,7 +58,7 @@ input:not([type='checkbox'], [type='radio']) {
 	font-size: 1.2rem;
 	color: var(--text);
 	background-color: var(--background-tertiary);
-	border: 4px solid var(--background-tertiary);
+	border: 2px solid var(--background-tertiary);
 	border-radius: 12px;
 
 	transition: border-color 0.2s ease-in-out;
@@ -68,9 +68,9 @@ input:not([type='checkbox'], [type='radio']) {
 	}
 
 	&:active,
-	&:focus {
+	&:focus-visible {
 		outline: none;
-		border-color: var(--secondary);
+		border-color: var(--primary);
 	}
 
 	&[type='color'] {
