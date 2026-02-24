@@ -9,3 +9,4 @@ node_modules
 /packages/svelte/CHANGELOG.md
 /packages/svelte/dist
 /packages/docs/.svelte-kit
+/packages/docs/.wrangler
