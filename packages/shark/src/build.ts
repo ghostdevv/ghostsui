@@ -1,17 +1,14 @@
-import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
-import { dirname, extname, join, relative, resolve } from 'node:path';
-import { intro, outro, spinner } from '@clack/prompts';
+import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { basename, dirname, extname, join, relative, resolve } from 'node:path';
+import { intro, log, outro, spinner } from '@clack/prompts';
 import expressiveCode from 'satteri-expressive-code';
 import { serendipity } from './serendipity';
 import { markdownToHtml } from 'satteri';
 import { fileURLToPath } from 'node:url';
 import { styleText } from 'node:util';
 import { existsSync } from 'node:fs';
-import { cwd } from 'node:process';
+import { homedir } from 'node:os';
 import dedent from 'dedent';
-
-const ENTRY_DIR = resolve('src');
-const DIST_DIR = resolve('dist');
 
 const htmlWrap = (children: string) => dedent`
 <!DOCTYPE html>
@@ -89,21 +86,57 @@ async function ensureDir(dir: string) {
 	if (!exists) await mkdir(dir, { recursive: true });
 }
 
-export async function build() {
-	intro(
-		`${styleText('blue', `@ghostsui${styleText('dim', '/')}${styleText('bold', 'shark')}`)} ${styleText('magenta', 'build')}`,
-	);
+interface Options {
+	'out-dir': string;
+}
 
-	let s = spinner();
-	s.start('Finding files');
+function fmtPath(path: string) {
+	const home = homedir();
+	return path.startsWith(home) ? `~${path.slice(home.length)}` : path;
+}
 
-	// prettier-ignore
-	const files = (await readdir(ENTRY_DIR, { withFileTypes: true, recursive: true }))
+interface File {
+	name: string;
+	path: string;
+}
+
+async function readFiles(input: string): Promise<File[]> {
+	if (!existsSync(input)) return [];
+	const info = await stat(input);
+
+	if (info.isFile()) {
+		return [{ name: basename(input), path: input }];
+	}
+
+	return (await readdir(input, { withFileTypes: true, recursive: true }))
 		.filter((file) => file.isFile() && extname(file.name) === '.md')
 		.map((file) => ({
 			name: file.name,
 			path: join(file.parentPath, file.name),
 		}));
+}
+
+export async function build(inputRaw = 'src', options: Options) {
+	intro(
+		`${styleText('blue', `@ghostsui${styleText('dim', '/')}${styleText('bold', 'shark')}`)} ${styleText('magenta', 'build')}`,
+	);
+
+	const dest = resolve(options['out-dir']);
+	const input = resolve(inputRaw);
+	const cwd = process.cwd();
+
+	if (!existsSync(input)) {
+		log.error(`Input file/directory ${input} does not exist`);
+		process.exit(1);
+	}
+
+	const inputDir = (await stat(input)).isFile() ? dirname(input) : input;
+	log.info(`Input:  ${fmtPath(input)}\nOutput: ${fmtPath(dest)}`);
+
+	let s = spinner();
+	s.start('Finding files');
+
+	const files = await readFiles(input);
 
 	if (!files.length) {
 		s.error('No markdown files found :((');
@@ -120,12 +153,16 @@ export async function build() {
 		const contents = await readFile(file.path, 'utf-8');
 		const html = await render(contents);
 
-		const dest = join(DIST_DIR, relative(ENTRY_DIR, file.path));
-		await ensureDir(dirname(dest));
-		await writeFile(dest.replace(/\.md$/, '.html'), html, 'utf-8');
+		const path = join(
+			dest,
+			relative(inputDir, file.path).slice(0, -2) + 'html',
+		);
+
+		await ensureDir(dirname(path));
+		await writeFile(path, html, 'utf-8');
 	}
 
-	s.stop(`Rendered ${files.length} markdown to ${relative(cwd(), DIST_DIR)}`);
+	s.stop(`Rendered ${files.length} markdown to ${relative(cwd, dest)}`);
 
 	s = spinner();
 	s.start('Creating ghostsui.css');
@@ -135,7 +172,7 @@ export async function build() {
 		'utf-8',
 	);
 
-	await writeFile(join(DIST_DIR, 'ghostsui.css'), css, 'utf-8');
+	await writeFile(join(dest, 'ghostsui.css'), css, 'utf-8');
 
 	s.stop('Created ghostsui.css');
 

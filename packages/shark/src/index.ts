@@ -4,5 +4,10 @@ import { build } from './build';
 import sade from 'sade';
 
 const cli = sade('shark').version(version);
-cli.command('build').describe('Export markdown files as html').action(build);
+
+cli.command('build [input]')
+	.describe('Export markdown files as html')
+	.option('-d, --out-dir <dir>', 'Output directory', 'dist')
+	.action(build);
+
 await (cli.parse(process.argv) as unknown as Promise<void>);
