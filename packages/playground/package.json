@@ -9,11 +9,11 @@
 	},
 	"devDependencies": {
 		"@ghostsui/svelte": "workspace:^",
-		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@sveltejs/vite-plugin-svelte": "^7.3.0",
 		"ghostsui": "workspace:^",
-		"svelte": "^5.53.2",
-		"svelte-check": "^4.4.3",
-		"typescript": "^5.9.3",
-		"vite": "^7.3.1"
+		"svelte": "^5.56.9",
+		"svelte-check": "^4.7.5",
+		"typescript": "^6.0.3",
+		"vite": "^8.2.1"
 	}
 }
