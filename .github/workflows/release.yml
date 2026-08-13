@@ -39,9 +39,7 @@ jobs:
               run: pnpm build
 
             - name: Create Release Pull Request
-              uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
-              with:
-                  publish: pnpm changeset publish
+              uses: changesets/action@198f833dd7d863100ea6e28967bc9a9fdefadb0a # v2.1.0
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_CONFIG_PROVENANCE: true

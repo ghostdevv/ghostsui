@@ -1,12 +1,10 @@
 {
-	"$schema": "https://unpkg.com/@changesets/config@3.1.2/schema.json",
+	"$schema": "https://unpkg.com/@changesets/config@4/schema.json",
 	"changelog": [
-		"@svitejs/changesets-changelog-github-compact",
-		{ "repo": "ghostdevv/ghostsui" }
+		"@changesets/changelog-github",
+		{ "repo": "ghostdevv/ghostsui", "template": "\n\n- {summary} {ref}" }
 	],
 	"commit": false,
-	"linked": [],
 	"access": "public",
-	"baseBranch": "main",
 	"bumpVersionsWithWorkspaceProtocolOnly": true
 }
