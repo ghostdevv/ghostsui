@@ -645,8 +645,7 @@ p q r s t u v w x y z | ~ </pre>
 						<textarea
 							rows="8"
 							cols="48"
-							placeholder="Enter your message here"
-						></textarea>
+							placeholder="Enter your message here"></textarea>
 					</label>
 				</p>
 			</fieldset>
