@@ -1,5 +1,13 @@
 # @ghostsui/shark
 
+## 1.0.0-beta.2
+
+### Patch Changes
+
+- feat: add --base flag for setting assets base dir ([`f63d564`](https://github.com/ghostdevv/ghostsui/commit/f63d564b94d6db4bf91ff9a06b7ebf1c5dba79a2))
+
+- fix: ensure dist dir is created ([`a97eece`](https://github.com/ghostdevv/ghostsui/commit/a97eeceb88ebdb2e3308df2e2cc474e4bb9aa26e))
+
 ## 1.0.0-beta.1
 
 ### Minor Changes
