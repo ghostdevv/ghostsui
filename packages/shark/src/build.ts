@@ -1,5 +1,6 @@
-import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
-import { basename, dirname, extname, join, relative, resolve } from 'node:path';
+import { basename, dirname, join, relative, resolve } from 'node:path';
+import { watchFiles, readFiles, ensureDir, fmtPath } from './fs';
+import { readFile, stat, writeFile } from 'node:fs/promises';
 import { intro, log, outro, spinner } from '@clack/prompts';
 import expressiveCode from 'satteri-expressive-code';
 import { serendipity } from './serendipity';
@@ -7,9 +8,13 @@ import { markdownToHtml } from 'satteri';
 import { fileURLToPath } from 'node:url';
 import { styleText } from 'node:util';
 import { existsSync } from 'node:fs';
-import { homedir } from 'node:os';
-import chokidar from 'chokidar';
 import dedent from 'dedent';
+
+interface Options {
+	'out-dir': string;
+	watch: boolean;
+	base: string;
+}
 
 const htmlWrap = (children: string, base: string) => dedent`
 <!DOCTYPE html>
@@ -112,38 +117,6 @@ async function renderFiles(
 	);
 }
 
-async function ensureDir(dir: string) {
-	const exists = existsSync(dir);
-	if (!exists) await mkdir(dir, { recursive: true });
-}
-
-interface Options {
-	'out-dir': string;
-	watch: boolean;
-	base: string;
-}
-
-function fmtPath(path: string) {
-	const home = homedir();
-	return path.startsWith(home) ? `~${path.slice(home.length)}` : path;
-}
-
-async function readFiles(input: string): Promise<Set<string>> {
-	if (!existsSync(input)) return new Set();
-	const info = await stat(input);
-
-	if (info.isFile()) {
-		// todo check is markdown
-		return new Set([input]);
-	}
-
-	return new Set(
-		(await readdir(input, { withFileTypes: true, recursive: true }))
-			.filter((file) => file.isFile() && extname(file.name) === '.md')
-			.map((file) => join(file.parentPath, file.name)),
-	);
-}
-
 export async function build(inputRaw = 'src', options: Options) {
 	intro(
 		`${styleText('blue', `@ghostsui${styleText('dim', '/')}${styleText('bold', 'shark')}`)} ${styleText('magenta', 'build')}`,
@@ -187,85 +160,11 @@ export async function build(inputRaw = 'src', options: Options) {
 	s.stop(`Found ${files.size} markdown files!`);
 
 	if (options.watch) {
-		let controller = new AbortController();
-		let rendering = false;
-		let scheduled = false;
+		log.info('Watching files for changes...');
 
-		async function render() {
-			if (rendering) {
-				scheduled = true;
-				return;
-			}
-			rendering = true;
-			try {
-				await renderFiles(
-					files,
-					dest,
-					inputDir,
-					options.base,
-					controller.signal,
-				);
-			} catch {
-				// aborted or cancelled — ignore
-			} finally {
-				rendering = false;
-				if (scheduled) {
-					scheduled = false;
-					await render();
-				}
-			}
-		}
-
-		let debounceTimer: ReturnType<typeof setTimeout>;
-		chokidar.watch(input).on('all', async (event, path) => {
-			let changed = false;
-
-			switch (event) {
-				case 'add':
-				case 'addDir':
-					for (const file of await readFiles(path)) {
-						if (files.has(file)) continue;
-						changed = true;
-						files.add(file);
-					}
-					break;
-
-				case 'unlink':
-					for (const file of files) {
-						if (file === path) {
-							changed = true;
-							files.delete(file);
-						}
-					}
-					break;
-
-				case 'unlinkDir':
-					for (const file of files) {
-						if (file.startsWith(path)) {
-							changed = true;
-							files.delete(file);
-						}
-					}
-					break;
-
-				case 'change':
-					if (files.has(path)) {
-						changed = true;
-					}
-					break;
-			}
-
-			if (changed) {
-				clearTimeout(debounceTimer);
-				debounceTimer = setTimeout(() => {
-					controller.abort();
-					controller = new AbortController();
-					render();
-				}, 300);
-			}
+		await watchFiles(input, async (files) => {
+			await renderFiles(files, dest, inputDir, options.base);
 		});
-
-		await render();
 	} else {
 		await renderFiles(files, dest, inputDir, options.base);
 		outro('Done!');
