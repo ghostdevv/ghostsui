@@ -1,5 +1,11 @@
 # @ghostsui/svelte
 
+## 1.0.0-beta.4
+
+### Minor Changes
+
+- feat: password input supports hiding the label with sr-only class ([`5aba3f7`](https://github.com/ghostdevv/ghostsui/commit/5aba3f7e56fb7ed0e0cb60997087d70d48a8cfaa))
+
 ## 1.0.0-beta.3
 
 ### Minor Changes
