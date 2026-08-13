@@ -24,11 +24,11 @@
 		"lint": "publint"
 	},
 	"devDependencies": {
-		"esbuild": "^0.27.3",
+		"esbuild": "^0.28.2",
 		"greset": "^2.0.0",
 		"include-media": "^2.0.0",
-		"publint": "^0.3.17",
-		"sass": "^1.97.3",
+		"publint": "^0.3.23",
+		"sass": "^1.102.0",
 		"sass-hex-rgb": "^1.0.1"
 	},
 	"files": [
