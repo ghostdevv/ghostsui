@@ -8,6 +8,7 @@
 	},
 	"dependencies": {
 		"@clack/prompts": "^1.7.0",
+		"chokidar": "^5.0.0",
 		"dedent": "^1.7.2",
 		"sade": "^1.8.1",
 		"satteri": "^0.9.5",
@@ -15,7 +16,6 @@
 	},
 	"devDependencies": {
 		"@types/node": "^26.2.0",
-		"chokidar": "^5.0.0",
 		"publint": "^0.3.17",
 		"tsdown": "^0.22.14",
 		"typescript": "^6.0.3"

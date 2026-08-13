@@ -107,6 +107,9 @@ importers:
       '@clack/prompts':
         specifier: ^1.7.0
         version: 1.7.0
+      chokidar:
+        specifier: ^5.0.0
+        version: 5.0.0
       dedent:
         specifier: ^1.7.2
         version: 1.7.2
@@ -126,9 +129,6 @@ importers:
       '@types/node':
         specifier: ^26.2.0
         version: 26.2.0
-      chokidar:
-        specifier: ^5.0.0
-        version: 5.0.0
       publint:
         specifier: ^0.3.17
         version: 0.3.23
