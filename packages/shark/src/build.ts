@@ -148,6 +148,8 @@ export async function build(inputRaw = 'src', options: Options) {
 	);
 
 	const dest = resolve(options['out-dir']);
+	await ensureDir(dest);
+
 	const input = resolve(inputRaw);
 
 	if (!existsSync(input)) {
