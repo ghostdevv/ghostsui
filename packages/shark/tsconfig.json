@@ -11,8 +11,8 @@
 		"module": "ESNext",
 		"target": "ESNext",
 		"verbatimModuleSyntax": true,
-		"types": ["node"],
+		"types": ["node"]
 	},
 	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules/**"],
+	"exclude": ["node_modules/**"]
 }

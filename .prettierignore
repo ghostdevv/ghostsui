@@ -10,3 +10,4 @@ node_modules
 /packages/svelte/dist
 /packages/docs/.svelte-kit
 /packages/docs/.wrangler
+/packages/shark/dist
