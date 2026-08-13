@@ -102,6 +102,15 @@ importers:
         specifier: ^7.3.1
         version: 7.3.1(jiti@2.6.1)(sass@1.97.3)
 
+  packages/shark:
+    devDependencies:
+      publint:
+        specifier: ^0.3.17
+        version: 0.3.17
+      typescript:
+        specifier: ^6.0.3
+        version: 6.0.3
+
   packages/svelte:
     dependencies:
       ghostsui:
@@ -925,6 +934,7 @@ packages:
   '@svitejs/changesets-changelog-github-compact@1.2.0':
     resolution: {integrity: sha512-08eKiDAjj4zLug1taXSIJ0kGL5cawjVCyJkBb6EWSg5fEPX6L+Wtr0CH2If4j5KYylz85iaZiFlUItvgJvll5g==}
     engines: {node: ^14.13.1 || ^16.0.0 || >=18}
+    deprecated: unmaintained
 
   '@types/cookie@0.6.0':
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
@@ -1562,6 +1572,11 @@ packages:
 
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2966,6 +2981,8 @@ snapshots:
     optional: true
 
   typescript@5.9.3: {}
+
+  typescript@6.0.3: {}
 
   undici@7.18.2: {}
 

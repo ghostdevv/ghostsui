@@ -1,0 +1,30 @@
+{
+	"name": "@ghostsui/shark",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"check": "tsc --noEmit && publint"
+	},
+	"devDependencies": {
+		"publint": "^0.3.17",
+		"typescript": "^6.0.3"
+	},
+	"packageManager": "pnpm@10.30.1",
+	"engines": {},
+	"files": [
+		"dist",
+		"LICENSE"
+	],
+	"bin": "./dist/bin.mjs",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ghostdevv/ghostsui.git",
+		"directory": "packages/shark"
+	},
+	"bugs": {
+		"url": "https://github.com/ghostdevv/ghostsui/issues"
+	},
+	"homepage": "https://ui.ghostdev.xyz",
+	"author": "Willow GHOST <hello@willow.sh> (https://willow.sh)",
+	"license": "MIT"
+}
