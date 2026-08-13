@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { styleText } from 'node:util';
 import { existsSync } from 'node:fs';
 import { homedir } from 'node:os';
+import chokidar from 'chokidar';
 import dedent from 'dedent';
 
 const htmlWrap = (children: string) => dedent`
@@ -81,6 +82,35 @@ async function render(markdown: string) {
 	return htmlWrap(html);
 }
 
+async function renderFiles(
+	files: Set<string>,
+	dest: string,
+	inputDir: string,
+	signal?: AbortSignal,
+) {
+	const s = spinner();
+	s.start('Rendering markdown');
+
+	for (const file of files.values()) {
+		if (signal?.aborted) {
+			s.stop('Cancelled');
+			return;
+		}
+
+		s.message(`Rendering ${basename(file)}`);
+		const contents = await readFile(file, 'utf-8');
+		const html = await render(contents);
+
+		const path = join(dest, relative(inputDir, file).slice(0, -2) + 'html');
+		await ensureDir(dirname(path));
+		await writeFile(path, html, 'utf-8');
+	}
+
+	s.stop(
+		`Rendered ${files.size} markdown to ${relative(process.cwd(), dest)}`,
+	);
+}
+
 async function ensureDir(dir: string) {
 	const exists = existsSync(dir);
 	if (!exists) await mkdir(dir, { recursive: true });
@@ -88,6 +118,7 @@ async function ensureDir(dir: string) {
 
 interface Options {
 	'out-dir': string;
+	watch: boolean;
 }
 
 function fmtPath(path: string) {
@@ -95,25 +126,20 @@ function fmtPath(path: string) {
 	return path.startsWith(home) ? `~${path.slice(home.length)}` : path;
 }
 
-interface File {
-	name: string;
-	path: string;
-}
-
-async function readFiles(input: string): Promise<File[]> {
-	if (!existsSync(input)) return [];
+async function readFiles(input: string): Promise<Set<string>> {
+	if (!existsSync(input)) return new Set();
 	const info = await stat(input);
 
 	if (info.isFile()) {
-		return [{ name: basename(input), path: input }];
+		// todo check is markdown
+		return new Set([input]);
 	}
 
-	return (await readdir(input, { withFileTypes: true, recursive: true }))
-		.filter((file) => file.isFile() && extname(file.name) === '.md')
-		.map((file) => ({
-			name: file.name,
-			path: join(file.parentPath, file.name),
-		}));
+	return new Set(
+		(await readdir(input, { withFileTypes: true, recursive: true }))
+			.filter((file) => file.isFile() && extname(file.name) === '.md')
+			.map((file) => join(file.parentPath, file.name)),
+	);
 }
 
 export async function build(inputRaw = 'src', options: Options) {
@@ -123,7 +149,6 @@ export async function build(inputRaw = 'src', options: Options) {
 
 	const dest = resolve(options['out-dir']);
 	const input = resolve(inputRaw);
-	const cwd = process.cwd();
 
 	if (!existsSync(input)) {
 		log.error(`Input file/directory ${input} does not exist`);
@@ -134,37 +159,6 @@ export async function build(inputRaw = 'src', options: Options) {
 	log.info(`Input:  ${fmtPath(input)}\nOutput: ${fmtPath(dest)}`);
 
 	let s = spinner();
-	s.start('Finding files');
-
-	const files = await readFiles(input);
-
-	if (!files.length) {
-		s.error('No markdown files found :((');
-		process.exit(1);
-	}
-
-	s.stop(`Found ${files.length} markdown files!`);
-
-	s = spinner();
-	s.start('Rendering markdown');
-
-	for (const file of files) {
-		s.message(`Rendering ${file.name}`);
-		const contents = await readFile(file.path, 'utf-8');
-		const html = await render(contents);
-
-		const path = join(
-			dest,
-			relative(inputDir, file.path).slice(0, -2) + 'html',
-		);
-
-		await ensureDir(dirname(path));
-		await writeFile(path, html, 'utf-8');
-	}
-
-	s.stop(`Rendered ${files.length} markdown to ${relative(cwd, dest)}`);
-
-	s = spinner();
 	s.start('Creating ghostsui.css');
 
 	const css = await readFile(
@@ -176,5 +170,94 @@ export async function build(inputRaw = 'src', options: Options) {
 
 	s.stop('Created ghostsui.css');
 
-	outro('Done!');
+	s = spinner();
+	s.start('Finding files');
+
+	const files = await readFiles(input);
+
+	if (!files.size && !options.watch) {
+		s.error('No markdown files found :((');
+		process.exit(1);
+	}
+
+	s.stop(`Found ${files.size} markdown files!`);
+
+	if (options.watch) {
+		let controller = new AbortController();
+		let rendering = false;
+		let scheduled = false;
+
+		async function render() {
+			if (rendering) {
+				scheduled = true;
+				return;
+			}
+			rendering = true;
+			try {
+				await renderFiles(files, dest, inputDir, controller.signal);
+			} catch {
+				// aborted or cancelled — ignore
+			} finally {
+				rendering = false;
+				if (scheduled) {
+					scheduled = false;
+					await render();
+				}
+			}
+		}
+
+		let debounceTimer: ReturnType<typeof setTimeout>;
+		chokidar.watch(input).on('all', async (event, path) => {
+			let changed = false;
+
+			switch (event) {
+				case 'add':
+				case 'addDir':
+					for (const file of await readFiles(path)) {
+						if (files.has(file)) continue;
+						changed = true;
+						files.add(file);
+					}
+					break;
+
+				case 'unlink':
+					for (const file of files) {
+						if (file === path) {
+							changed = true;
+							files.delete(file);
+						}
+					}
+					break;
+
+				case 'unlinkDir':
+					for (const file of files) {
+						if (file.startsWith(path)) {
+							changed = true;
+							files.delete(file);
+						}
+					}
+					break;
+
+				case 'change':
+					if (files.has(path)) {
+						changed = true;
+					}
+					break;
+			}
+
+			if (changed) {
+				clearTimeout(debounceTimer);
+				debounceTimer = setTimeout(() => {
+					controller.abort();
+					controller = new AbortController();
+					render();
+				}, 300);
+			}
+		});
+
+		await render();
+	} else {
+		await renderFiles(files, dest, inputDir);
+		outro('Done!');
+	}
 }
