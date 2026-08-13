@@ -11,13 +11,13 @@ import { homedir } from 'node:os';
 import chokidar from 'chokidar';
 import dedent from 'dedent';
 
-const htmlWrap = (children: string) => dedent`
+const htmlWrap = (children: string, base: string) => dedent`
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="$/ghostsui.css">
+        <link rel="stylesheet" href="${base}${base.endsWith('/') ? '' : '/'}ghostsui.css">
         <title>wai</title>
         <style>
             h2 {
@@ -40,7 +40,7 @@ const htmlWrap = (children: string) => dedent`
     </body>
 </html>`;
 
-async function render(markdown: string) {
+async function render(markdown: string, base: string) {
 	const { html } = await markdownToHtml(markdown, {
 		hastPlugins: [
 			expressiveCode({
@@ -79,13 +79,14 @@ async function render(markdown: string) {
 		],
 	});
 
-	return htmlWrap(html);
+	return htmlWrap(html, base);
 }
 
 async function renderFiles(
 	files: Set<string>,
 	dest: string,
 	inputDir: string,
+	base: string,
 	signal?: AbortSignal,
 ) {
 	const s = spinner();
@@ -99,7 +100,7 @@ async function renderFiles(
 
 		s.message(`Rendering ${basename(file)}`);
 		const contents = await readFile(file, 'utf-8');
-		const html = await render(contents);
+		const html = await render(contents, base);
 
 		const path = join(dest, relative(inputDir, file).slice(0, -2) + 'html');
 		await ensureDir(dirname(path));
@@ -119,6 +120,7 @@ async function ensureDir(dir: string) {
 interface Options {
 	'out-dir': string;
 	watch: boolean;
+	base: string;
 }
 
 function fmtPath(path: string) {
@@ -196,7 +198,13 @@ export async function build(inputRaw = 'src', options: Options) {
 			}
 			rendering = true;
 			try {
-				await renderFiles(files, dest, inputDir, controller.signal);
+				await renderFiles(
+					files,
+					dest,
+					inputDir,
+					options.base,
+					controller.signal,
+				);
 			} catch {
 				// aborted or cancelled — ignore
 			} finally {
@@ -259,7 +267,7 @@ export async function build(inputRaw = 'src', options: Options) {
 
 		await render();
 	} else {
-		await renderFiles(files, dest, inputDir);
+		await renderFiles(files, dest, inputDir, options.base);
 		outro('Done!');
 	}
 }

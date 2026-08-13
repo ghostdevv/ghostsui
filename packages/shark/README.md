@@ -14,5 +14,6 @@ Usage
 Options
   -d, --out-dir    Output directory  (default dist)
   --watch          Watch for changes  (default false)
+  --base           Asset base path  (default /)
   -h, --help       Displays this message
 ```
