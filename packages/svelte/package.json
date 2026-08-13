@@ -56,13 +56,13 @@
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
-		"@sveltejs/package": "^2.5.7",
-		"prettier": "^3.8.1",
-		"prettier-plugin-svelte": "^3.4.1",
-		"publint": "^0.3.17",
-		"svelte": "^5.51.0",
-		"svelte-check": "^4.3.6",
-		"typescript": "^5.9.3"
+		"@sveltejs/package": "^2.5.8",
+		"prettier": "^3.9.6",
+		"prettier-plugin-svelte": "^4.1.1",
+		"publint": "^0.3.23",
+		"svelte": "^5.56.9",
+		"svelte-check": "^4.7.5",
+		"typescript": "^6.0.3"
 	},
 	"dependencies": {
 		"melt": "^0.44.0"
