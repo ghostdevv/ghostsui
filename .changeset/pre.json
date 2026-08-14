@@ -1,28 +1,4 @@
 {
   "mode": "pre",
-  "tag": "beta",
-  "initialVersions": {
-    "ghostsui": "2.0.0-beta.7",
-    "@ghostsui/svelte": "1.0.0-beta.0",
-    "@ghostsui/shark": "1.0.0-beta.0"
-  },
-  "changesets": [
-    "chilly-coins-like",
-    "clean-goats-relax",
-    "deep-lights-grow",
-    "fifty-keys-build",
-    "gentle-mammals-report",
-    "icy-jokes-occur",
-    "itchy-regions-grab",
-    "khaki-teeth-wash",
-    "loud-worlds-fetch",
-    "metal-spoons-juggle",
-    "nice-spiders-agree",
-    "pink-pears-join",
-    "slick-suits-wash",
-    "some-meteors-fry",
-    "spotty-dragons-start",
-    "tall-suits-pull",
-    "tough-stars-joke"
-  ]
+  "tag": "beta"
 }
