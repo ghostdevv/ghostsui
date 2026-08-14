@@ -35,6 +35,7 @@ export async function watchFiles(
 	callback: (files: Set<string>) => Promise<void> | void,
 ) {
 	const files = await readFiles(input);
+	let changedFiles = new Set<string>(files);
 	let rendering = false;
 	let scheduled = false;
 
@@ -44,8 +45,10 @@ export async function watchFiles(
 			return;
 		}
 		rendering = true;
+		const toEmit = changedFiles;
+		changedFiles = new Set();
 		try {
-			await callback(files);
+			await callback(toEmit);
 		} finally {
 			rendering = false;
 			if (scheduled) {
@@ -62,48 +65,42 @@ export async function watchFiles(
 	const watcher = chokidar.watch(input, { ignoreInitial: true });
 
 	watcher.on('all', async (event, path) => {
-		let changed = false;
+		const sizeBefore = changedFiles.size;
 
 		switch (event) {
 			case 'add':
 			case 'addDir':
 				for (const file of await readFiles(path)) {
 					if (!files.has(file)) {
-						changed = true;
 						files.add(file);
+						changedFiles.add(file);
 					}
 				}
 				break;
-
 			case 'unlink':
 				if (files.has(path)) {
-					changed = true;
 					files.delete(path);
+					changedFiles.add(path);
 				}
 				break;
-
 			case 'unlinkDir': {
-				const toRemove = [];
+				const prefix = path.endsWith('/') ? path : path + '/';
 				for (const file of files) {
-					if (file.startsWith(path)) {
-						toRemove.push(file);
+					if (file === path || file.startsWith(prefix)) {
+						files.delete(file);
+						changedFiles.add(file);
 					}
-				}
-				if (toRemove.length) {
-					changed = true;
-					for (const f of toRemove) files.delete(f);
 				}
 				break;
 			}
-
 			case 'change':
-				// file content changed – set changed to trigger render if file is tracked
-				if (files.has(path)) changed = true;
+				if (files.has(path)) changedFiles.add(path);
 				break;
 		}
 
-		if (!changed) return;
+		if (changedFiles.size === sizeBefore) return;
 		clearTimeout(debounceTimer);
+		// todo throttled
 		debounceTimer = setTimeout(() => run(), 300);
 	});
 }
