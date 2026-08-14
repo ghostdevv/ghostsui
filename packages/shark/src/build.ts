@@ -1,12 +1,11 @@
 import { basename, dirname, join, relative, resolve } from 'node:path';
 import { watchFiles, readFiles, ensureDir, fmtPath } from './fs';
 import { readFile, stat, writeFile } from 'node:fs/promises';
-import { intro, log, outro, spinner } from '@clack/prompts';
+import { log, outro, spinner } from '@clack/prompts';
 import expressiveCode from 'satteri-expressive-code';
 import { serendipity } from './serendipity';
 import { markdownToHtml } from 'satteri';
 import { fileURLToPath } from 'node:url';
-import { styleText } from 'node:util';
 import { existsSync } from 'node:fs';
 import dedent from 'dedent';
 
@@ -118,10 +117,6 @@ async function renderFiles(
 }
 
 export async function build(inputRaw = 'src', options: Options) {
-	intro(
-		`${styleText('blue', `@ghostsui${styleText('dim', '/')}${styleText('bold', 'shark')}`)} ${styleText('magenta', 'build')}`,
-	);
-
 	const dest = resolve(options['out-dir']);
 	await ensureDir(dest);
 

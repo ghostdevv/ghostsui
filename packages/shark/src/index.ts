@@ -2,6 +2,7 @@
 import { version } from '../package.json' with { type: 'json' };
 import { build } from './build';
 import sade from 'sade';
+import { printIntro } from './logo';
 
 const cli = sade('shark').version(version);
 
@@ -12,4 +13,9 @@ cli.command('build [input]')
 	.option('--base', 'Asset base path', '/')
 	.action(build);
 
-await (cli.parse(process.argv) as unknown as Promise<void>);
+const command = cli.parse(process.argv, { lazy: true });
+
+if (command) {
+	printIntro(command.name);
+	await command.handler(...command.args);
+}
