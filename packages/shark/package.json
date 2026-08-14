@@ -15,6 +15,7 @@
 		"satteri-expressive-code": "^0.1.18"
 	},
 	"devDependencies": {
+		"@std/fmt": "jsr:^1.0.10",
 		"@types/node": "^26.2.0",
 		"publint": "^0.3.17",
 		"tsdown": "^0.22.14",

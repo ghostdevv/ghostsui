@@ -3,9 +3,11 @@ import { watchFiles, readFiles, ensureDir, fmtPath } from './fs';
 import { readFile, stat, writeFile } from 'node:fs/promises';
 import { log, outro, spinner } from '@clack/prompts';
 import expressiveCode from 'satteri-expressive-code';
+import { format as fmtBytes } from '@std/fmt/bytes';
 import { serendipity } from './serendipity';
 import { markdownToHtml } from 'satteri';
 import { fileURLToPath } from 'node:url';
+import { styleText } from 'node:util';
 import { existsSync } from 'node:fs';
 import dedent from 'dedent';
 
@@ -91,29 +93,66 @@ async function renderFiles(
 	dest: string,
 	inputDir: string,
 	base: string,
-	signal?: AbortSignal,
+	logb: BuildLogger,
 ) {
-	const s = spinner();
-	s.start('Rendering markdown');
+	let first = true;
 
 	for (const file of files.values()) {
-		if (signal?.aborted) {
-			s.stop('Cancelled');
-			return;
-		}
-
-		s.message(`Rendering ${basename(file)}`);
+		logb.lap();
 		const contents = await readFile(file, 'utf-8');
 		const html = await render(contents, base);
 
 		const path = join(dest, relative(inputDir, file).slice(0, -2) + 'html');
 		await ensureDir(dirname(path));
 		await writeFile(path, html, 'utf-8');
+		await logb.push(path, first);
+		first = false;
+	}
+}
+
+class BuildLogger {
+	private ts = performance.now();
+	private first = true;
+
+	constructor(private readonly spacing: number) {}
+
+	lap() {
+		this.ts = performance.now();
 	}
 
-	s.stop(
-		`Rendered ${files.size} markdown to ${relative(process.cwd(), dest)}`,
-	);
+	async push(path: string, plus = false) {
+		let prefix = plus
+			? styleText(['dim', 'green'], '+ ')
+			: styleText('gray', '│ ');
+
+		if (this.first) {
+			prefix = `${styleText('gray', '│ ')}\n${prefix}`;
+			this.first = false;
+		}
+
+		console.log(prefix, await this.render(path));
+	}
+
+	private async render(path: string) {
+		const colour = path.endsWith('.css') ? 'magenta' : 'yellow';
+		const { size } = await stat(path);
+		const name = basename(path);
+		const spacing = Math.max(this.spacing + 1 - name.length, 1);
+
+		return (
+			styleText(['dim', colour], name) +
+			' '.repeat(spacing) +
+			fmtBytes(size) +
+			` [${Math.round(performance.now() - this.ts)}ms]`
+		);
+	}
+}
+
+async function renderCSS(dest: string, logb: BuildLogger) {
+	const path = join(dest, 'ghostsui.css');
+	const css = fileURLToPath(import.meta.resolve('ghostsui'));
+	await writeFile(path, await readFile(css, 'utf-8'), 'utf-8');
+	await logb.push(path);
 }
 
 export async function build(inputRaw = 'src', options: Options) {
@@ -128,22 +167,14 @@ export async function build(inputRaw = 'src', options: Options) {
 	}
 
 	const inputDir = (await stat(input)).isFile() ? dirname(input) : input;
-	log.info(`Input:  ${fmtPath(input)}\nOutput: ${fmtPath(dest)}`);
 
-	let s = spinner();
-	s.start('Creating ghostsui.css');
-
-	const css = await readFile(
-		fileURLToPath(import.meta.resolve('ghostsui')),
-		'utf-8',
+	log.message(
+		`Input:  ${styleText('dim', fmtPath(input))}\nOutput: ${styleText('dim', fmtPath(dest))}`,
+		{ symbol: styleText(['dim', 'cyan'], '~') },
 	);
 
-	await writeFile(join(dest, 'ghostsui.css'), css, 'utf-8');
-
-	s.stop('Created ghostsui.css');
-
-	s = spinner();
-	s.start('Finding files');
+	const s = spinner({ indicator: 'timer' });
+	s.start('Discovering files...');
 
 	const files = await readFiles(input);
 
@@ -152,16 +183,25 @@ export async function build(inputRaw = 'src', options: Options) {
 		process.exit(1);
 	}
 
-	s.stop(`Found ${files.size} markdown files!`);
+	s.stop(`Found ${styleText(['dim', 'cyan'], files.size.toString())} files`);
+	if (options.watch) log.info('Watching files for changes...');
+
+	const spacing = files
+		.values()
+		.map((f) => basename(f).replace(/\.md$/, '.html'))
+		.toArray()
+		.sort((a, b) => b.length - a.length)[0].length;
+
+	const logb = new BuildLogger(Math.max(spacing, 12));
 
 	if (options.watch) {
-		log.info('Watching files for changes...');
-
 		await watchFiles(input, async (files) => {
-			await renderFiles(files, dest, inputDir, options.base);
+			await renderFiles(files, dest, inputDir, options.base, logb);
 		});
+		renderCSS(dest, logb);
 	} else {
-		await renderFiles(files, dest, inputDir, options.base);
-		outro('Done!');
+		await renderFiles(files, dest, inputDir, options.base, logb);
+		await renderCSS(dest, logb);
+		outro('(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ Built!');
 	}
 }
