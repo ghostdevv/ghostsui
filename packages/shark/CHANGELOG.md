@@ -1,5 +1,19 @@
 # @ghostsui/shark
 
+## 1.0.0-beta.3
+
+### Minor Changes
+
+- perf: only re-render the files that changed when in watch mode ([`84bd0a4`](https://github.com/ghostdevv/ghostsui/commit/84bd0a4de0bc335f8d8647ba25eba2043f949ae5))
+
+- feat: prettier logging ([`83fc3b1`](https://github.com/ghostdevv/ghostsui/commit/83fc3b112137fe0c6a04404f2ba8f65d4c38b5d3))
+
+- feat: add intro logo ([`83fc3b1`](https://github.com/ghostdevv/ghostsui/commit/83fc3b112137fe0c6a04404f2ba8f65d4c38b5d3))
+
+### Patch Changes
+
+- fix: make chokidar a dependency ([`957faf3`](https://github.com/ghostdevv/ghostsui/commit/957faf3c3abf27930c8fb055b13ef46c83c4595b))
+
 ## 1.0.0-beta.2
 
 ### Patch Changes
